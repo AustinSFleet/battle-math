@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Answer_Box from "./Answer_Box"
+import Answer_Box from "./Answer_Box";
+import Battle_Box from "./Battle_Box"
 
 
 class Battle_Wrapper extends Component {
@@ -10,13 +11,16 @@ class Battle_Wrapper extends Component {
 	    abilities: [],
 	    items: [],
 	    maxHP: 20,
+      img:"//vignette4.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658",
 	    HP: 20
     },
 
     monster: {
       name: "Trump",
       experience: 10,
-      attack: ()=> 3 + Math.floor(3 * Math.random()),
+      attack: ()=> {
+        return(3 + Math.floor(3 * Math.random()))},
+      img:"https://vignette.wikia.nocookie.net/villains/images/8/80/Gnome_ruler.png/revision/latest?cb=20130803061909",
       HP: 10
     },
 
@@ -52,6 +56,11 @@ class Battle_Wrapper extends Component {
   render() {
     return (
       <div className="App">
+        <Battle_Box
+          attack={this.handleAttack}
+          state={this.state}
+          display="display: inline;"
+          />
         <Answer_Box
           onChange={this.handleInputChange}
           state={this.state}

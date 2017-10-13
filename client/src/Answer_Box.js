@@ -4,7 +4,6 @@ class Answer_Box extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.attack}>Attack!</button>
         <form>
           <h3>{this.props.state.problem.A} + {this.props.state.problem.B}</h3>
           <input
