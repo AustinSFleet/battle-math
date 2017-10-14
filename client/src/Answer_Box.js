@@ -11,7 +11,7 @@ class Answer_Box extends Component {
             type="input"
             name="userAnswer"
             onChange={this.props.onChange}
-            value={this.props.state.newPosition}
+            value={this.props.state.userAnswer}
           />
           <br/>
           <button onClick={this.props.submit}>Submit Answer</button>
