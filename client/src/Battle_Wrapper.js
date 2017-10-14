@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box"
 
-
 class Battle_Wrapper extends Component {
   state = {
-    me: {name: "Zed",
+    problem: {},
+    userAnswer: "",
+    seeAttackBtn: {display : "block" },
+    seeProblemBox: {display : "none"},
+    me: {
+      name: "Zed",
 	    level: 1,
 	    experience: 0,
 	    abilities: [],
@@ -14,7 +18,6 @@ class Battle_Wrapper extends Component {
       img:"//vignette4.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658",
 	    HP: 20
     },
-
     monster: {
       name: "Trump",
       experience: 10,
@@ -22,10 +25,7 @@ class Battle_Wrapper extends Component {
         return(3 + Math.floor(3 * Math.random()))},
       img:"https://vignette.wikia.nocookie.net/villains/images/8/80/Gnome_ruler.png/revision/latest?cb=20130803061909",
       HP: 10
-    },
-
-    problem: {},
-    userAnswer: "",
+    }
   }
 
   handleInputChange = event => {
@@ -37,20 +37,32 @@ class Battle_Wrapper extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state)
+    console.log(this.state);
+    if (this.state.userAnswer == this.state.problem.answer){
+      console.log("correct answer!")
+    }
+    else {
+      console.log("wrong!")
+    }
   };
 
-  addProblem = () => {
-	   let A = Math.floor(Math.random()*(10));
-	   let B = Math.floor(Math.random()*(10));
-	   let answer = A + B;
-     let damage = 2 + Math.floor(Math.random() * 3)
-     return ({A: A, B: B, answer: answer, damage: damage})
-  };
+
 
   handleAttack = (event) => {
     let newProblem = this.addProblem();
-    this.setState({problem: newProblem});
+    this.setState({
+      problem: newProblem,
+      seeAttackBtn: {display : "none" },
+      seeProblemBox: {display : "block"}
+    });
+  }
+
+  addProblem = () => {
+     let A = Math.floor(Math.random()*(10));
+     let B = Math.floor(Math.random()*(10));
+     let answer = A + B;
+     let damage = 2 + Math.floor(Math.random() * 3)
+     return ({A: A, B: B, answer: answer, damage: damage})
   }
 
   render() {
