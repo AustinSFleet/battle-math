@@ -21,14 +21,14 @@ class Battle_Wrapper extends Component {
 	    items: [],
 	    maxHP: 20,
       img:"//vignette4.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658",
-	    HP: 20,
+	    HP: 12,
       maxHP: 20
     },
     monster: {
       name: "Trump",
       experience: 10,
       attack: ()=> {
-        return(3 + Math.floor(3 * Math.random()))},
+        return(2 + Math.floor(2 * Math.random()))},
       img:"https://vignette.wikia.nocookie.net/villains/images/8/80/Gnome_ruler.png/revision/latest?cb=20130803061909",
       HP: 10,
       maxHP: 10
