@@ -9,9 +9,9 @@ class Login extends Component {
     <div>
       <form>
         <h3>Name</h3>
-        <input type="text">
+        <input type="text"/>
         <h3>Password</h3>
-        <input type="password">
+        <input type="password"/>
       </form>
     </div>
     )

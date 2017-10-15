@@ -16,7 +16,17 @@ class Main extends Component {
       HP: 70,
       maxHP: 10
     },
-    me: this.props.character,
+    me: {
+        name: "Zed",
+        level: 1,
+        experience: 0,
+        abilities: [],
+        items: [],
+        maxHP: 20,
+        img:"/images/Finn.png",
+        HP: 12,
+        maxHP: 12
+      },
     monsters: [{
       name: "Trump",
       experience: 10,

@@ -7,11 +7,12 @@ class Create extends Component {
     return (
 
     <div>
+      <h1>CREATE CHARACTER IN PROGRESS</h1>
       <form>
         <h3>Name</h3>
-        <input type="text">
+        <input type="text"/>
         <h3>Password</h3>
-        <input type="password">
+        <input type="password"/>
       </form>
     </div>
     )
