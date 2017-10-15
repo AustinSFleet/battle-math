@@ -6,7 +6,7 @@ class Answer_Box extends Component {
     return (
       <div>
         <form style={this.props.state.seeProblemBox}>
-          <h3>{this.props.state.problem.A} + {this.props.state.problem.B}</h3>
+          <h3>{this.props.state.problem.problemDisplay}</h3>
           <input
             type="input"
             name="userAnswer"
@@ -17,9 +17,13 @@ class Answer_Box extends Component {
           <button onClick={this.props.submit}>Submit Answer</button>
         </form>
         <div style={this.props.state.seeAttackBtns}>
-          <button
+          <button id="add"
             onClick={this.props.attack}
             >Addition Attack!
+          </button>
+          <button id="subtract"
+            onClick={this.props.attack}
+            >Subtraction Attack!
           </button>
         </div>
         <div

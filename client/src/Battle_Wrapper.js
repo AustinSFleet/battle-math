@@ -28,13 +28,24 @@ class Battle_Wrapper extends Component {
   };
 
   handleAttack = (event) => {
+    if (event.target.id === "add"){
     let newProblem = this.addProblem();
     this.setState({
       problem: newProblem,
       seeAttackBtns: {display : "none" },
       seeProblemBox: {display : "block"}
     });
-  };
+  }
+  else if (event.target.id === "subtract") {
+    let newProblem = this.subProblem();
+    this.setState({
+      problem: newProblem,
+      seeAttackBtns: {display : "none" },
+      seeProblemBox: {display : "block"}
+    });
+  }
+};
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -106,7 +117,21 @@ class Battle_Wrapper extends Component {
      let B = Math.floor(Math.random()*(10));
      let answer = A + B;
      let damage = 2 + Math.floor(Math.random() * 3);
-     return ({A: A, B: B, answer: answer, damage: damage})
+     return ({problemDisplay:`${A} + ${B}`, answer: answer, damage: damage})
+  };
+
+  subProblem = () => {
+    let A = Math.floor(Math.random()*(10));
+    let B = Math.floor(Math.random()*(10));
+    let C;
+    if (B > A) {
+      C = A;
+      A = B;
+      B = C;
+    }
+    let answer = A - B;
+    let damage = 2 + Math.floor(Math.random() * 3);
+    return ({problemDisplay:`${A} - ${B}`, answer: answer, damage: damage})
   };
 
   deadMonster = (monster) => {
