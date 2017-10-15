@@ -1,39 +1,31 @@
 import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
-import Battle_Box from "./Battle_Box"
+import Battle_Box from "./Battle_Box";
 
 class Battle_Wrapper extends Component {
   state = {
     problem: {},
     userAnswer: "",
+    seeBattle_view: {display: "none"},
+    seeBattle_cover: {display: "block"},
     seeAttackBtns: {display : "block" },
     seeProblemBox: {display : "none"},
     seeResultBox: {display: "none"},
     seeCounterAttack: {display: "none"},
     actionHeading: "",
     actionSubHead: "",
+    me: this.props.me,
+    monster: this.props.monster
+  };
 
-    me: {
-      name: "Zed",
-	    level: 1,
-	    experience: 0,
-	    abilities: [],
-	    items: [],
-	    maxHP: 20,
-      img:"//vignette4.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658",
-	    HP: 12,
-      maxHP: 20
-    },
-    monster: {
-      name: "Trump",
-      experience: 10,
-      attack: ()=> {
-        return(2 + Math.floor(2 * Math.random()))},
-      img:"https://vignette.wikia.nocookie.net/villains/images/8/80/Gnome_ruler.png/revision/latest?cb=20130803061909",
-      HP: 10,
-      maxHP: 10
-    }
-  }
+  handleBattleReady = (event) => {
+    console.log("battle ready or what?")
+    this.setState({
+      monster: this.props.monster,
+      seeBattle_view: {display: "block"},
+      seeBattle_cover: {display: "none"}
+    })
+  };
 
   handleAttack = (event) => {
     let newProblem = this.addProblem();
@@ -66,7 +58,7 @@ class Battle_Wrapper extends Component {
         actionHeading: "HIT!",
         actionSubHead: `You did ${this.state.problem.damage} damage!`,
         monster: upMonster
-      })
+      });
     }
     else {
       this.setState({
@@ -107,7 +99,7 @@ class Battle_Wrapper extends Component {
         seeAttackBtns: {display : "block" }
       })
     }
-  }
+  };
 
   addProblem = () => {
      let A = Math.floor(Math.random()*(10));
@@ -122,26 +114,39 @@ class Battle_Wrapper extends Component {
   };
 
   iDied = () => {
-    alert("Don't you understand you dead?")
+    alert("Don't you understand you dead?");
   };
 
-  render() {
+  render () {
     return (
-      <div className="App">
-        <Battle_Box
-          attack={this.handleAttack}
-          state={this.state}
-          display="display: inline;"
-        />
-        <Answer_Box
-          onChange={this.handleInputChange}
-          state={this.state}
-          submit={this.handleSubmit}
-          attack={this.handleAttack}
-          handleResult={this.handleResult}
-          handleCounter={this.handleCounter}
 
-        />
+      <div
+        style={this.props.visible}
+      >
+        <div id="battle_cover"
+          style={this.state.seeBattle_cover}
+        >
+          <button
+            onClick={this.handleBattleReady}
+          >Ready for Battle?</button>
+        </div>
+        <div id="battle_view"
+          style={this.state.seeBattle_view}
+        >
+          <Battle_Box
+            attack={this.handleAttack}
+            state={this.state}
+            display="display: inline;"
+          />
+          <Answer_Box
+            onChange={this.handleInputChange}
+            state={this.state}
+            submit={this.handleSubmit}
+            attack={this.handleAttack}
+            handleResult={this.handleResult}
+            handleCounter={this.handleCounter}
+          />
+        </div>
       </div>
     );
   }
