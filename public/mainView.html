@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Display Page</title>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+</head>
+<script type="text/javascript">
+$(function(){
+var count =0;
+
+$("#gameBtn").click(function(){
+    count++;
+    $("#gameExp").html(count);
+
+
+});
+
+
+});
+    </script>
+
+<body>
+    <h1>Welcome to the Main Game page!!!</h1>
+
+    <p>This is where the game will happen</p>
+
+
+    <h4 id="gameLevel">0</h4>
+    <h4 id="gameExp">0</h4>
+    <button id="gameBtn">Click to Change</button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <button id="logoutBtn">logout</button>
+    
+
+    
+</body>
+</html>
