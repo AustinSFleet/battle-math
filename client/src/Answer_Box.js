@@ -23,7 +23,7 @@ class Answer_Box extends Component {
           </button>
           <button id="subtract"
             onClick={this.props.attack}
-            >Subtraction Attack!
+            >Subtraction Heal!
           </button>
         </div>
         <div
