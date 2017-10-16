@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Battle_Wrapper from './Battle_Wrapper'
-import './App.css';
+import '../App.css';
 
 class Test_Map extends Component {
 

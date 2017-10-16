@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Battle_Wrapper from './Battle_Wrapper';
-import Main from './Main';
-import Login from './Login';
-import Create from './Create';
+import Main from './Game/Main';
+import Login from './Login&CreateNew/Login';
+import Create from './Login&CreateNew/Create';
 import NoMatch from './NoMatch';
 import './App.css';
 
