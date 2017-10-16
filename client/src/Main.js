@@ -6,7 +6,6 @@ import './App.css';
 class Main extends Component {
   state = {
     seeBattle_Wrapper:{display: "none"},
-    seeBattle_Wrapper:{display: "none"},
     seeMonsterBtns: {display: "inline"},
     activeMonster: {
       name: "Blank",
@@ -29,16 +28,16 @@ class Main extends Component {
       },
     monsters: [{
       name: "Trump",
-      experience: 10,
+      experience: 30,
       attack: ()=> {
-        return(2 + Math.floor(2 * Math.random()))},
+        return(3 + Math.floor(2 * Math.random()))},
       img:"/images/Gnome_ruler.png",
       HP: 10,
       maxHP: 10
     },
     {
       name: "Teenager",
-      experience: 10,
+      experience: 30,
       attack: ()=> {
         return(2 + Math.floor(2 * Math.random()))},
       img:"/images/Tiffany.png",
@@ -56,7 +55,7 @@ class Main extends Component {
     },
     {
       name: "Bob",
-      experience: 10,
+      experience: 50,
       attack: ()=> {
         return(1 + Math.floor(1 * Math.random()))},
       img:"/images/Nice_King.png",
@@ -75,6 +74,20 @@ class Main extends Component {
     console.log(monsterPick);
   }
 
+  afterBattleUpdate = (monster) => {
+    let upMe = {...this.state.me};
+    upMe.experience += monster.experience;
+    upMe.level = Math.floor(this.state.me.experience / 60) + 1
+    if (upMe.level > this.state.me.level){
+      alert(`You have gained a level!, You are now a level ${upMe.level} adventurer!`);
+    }
+    this.setState({
+      seeBattle_Wrapper: {display: "none"},
+      seeMonsterBtns: {display: "block"},
+      me: upMe})
+    console.log(this.state.me)
+  }
+
   render() {
     return (
       <div className="App">
@@ -82,6 +95,7 @@ class Main extends Component {
           visible={this.state.seeBattle_Wrapper}
           me={this.state.me}
           monster={this.state.activeMonster}
+          afterBattleUpdate={this.afterBattleUpdate}
         />
         <Test_Map
           monsterClick={this.handleMonsterClick}
