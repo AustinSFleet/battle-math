@@ -57,25 +57,33 @@ class Battle_Wrapper extends Component {
   handleSubmit = event => {
     //this happens when you submit an answer
     event.preventDefault();
+    let upMonster = {...this.state.monster};
+    let upMe = {...this.state.me};
     this.setState({
       seeResultBox: {display: "block"},
       seeProblemBox: {display: "none"}
     });
     if (this.state.userAnswer == this.state.problem.answer){
-      let upMonster = {...this.state.monster};
-      upMonster.HP -= this.state.problem.damage;
+      // let upMonster = {...this.state.monster};
+      upMonster.HP += this.state.problem.CoMonHP;
+      upMe.HP += this.state.problem.CoMeHP;
       this.setState({
         userAnswer: "",
-        actionHeading: "HIT!",
-        actionSubHead: `You did ${this.state.problem.damage} damage!`,
-        monster: upMonster
+        actionHeading: this.state.problem.CoMeHead,
+        actionSubHead: this.state.problem.CoMeSub,
+        monster: upMonster,
+        me: upMe
       });
     }
     else {
+      upMonster.HP += this.state.problem.WrMonHP;
+      upMe.HP += this.state.problem.WrMeHP;
       this.setState({
         userAnswer: "",
-        actionHeading: "MISS!",
-        actionSubHead: `${this.state.monster.name} laughs at you!`
+        actionHeading: this.state.problem.WrMeHead,
+        actionSubHead: this.state.problem.WrMeSub,
+        monster: upMonster,
+        me: upMe
       });
     }
   };
@@ -117,7 +125,20 @@ class Battle_Wrapper extends Component {
      let B = Math.floor(Math.random()*(10));
      let answer = A + B;
      let damage = 2 + Math.floor(Math.random() * 3);
-     return ({problemDisplay:`${A} + ${B}`, answer: answer, damage: damage})
+     return ({
+       problemDisplay:`${A} + ${B}`, 
+       answer: answer, 
+       CoMeHP: 0,
+       CoMonHP: -(damage),
+       CoMeHead: "Correct Answer!",
+       CoMeSub: "You did" + (damage) + "!",
+       
+       WrMeHP: 0,
+       WrMonHP: 0,
+       WrMeHead: "Wrong Answer!",
+       WrMeSub: "The correct answer was " + answer +".",
+       
+      })
   };
 
   subProblem = () => {
@@ -130,8 +151,18 @@ class Battle_Wrapper extends Component {
       B = C;
     }
     let answer = A - B;
-    let damage = 2 + Math.floor(Math.random() * 3);
-    return ({problemDisplay:`${A} - ${B}`, answer: answer, damage: damage})
+    let heal = 2 + Math.floor(Math.random() * 3);
+    return ({problemDisplay:`${A} - ${B}`, 
+    answer: answer, 
+    CoMeHP: +(heal),
+    CoMonHP: 0,
+    CoMeHead: "Correct Answer!",
+    CoMeSub: "You healed " + (heal) + " points!",
+    
+    WrMeHP: 0,
+    WrMonHP: 0,
+    WrMeHead: "Wrong Answer!",
+    WrMeSub: "The correct answer was " + answer +".",})
   };
 
   deadMonster = (monster) => {
