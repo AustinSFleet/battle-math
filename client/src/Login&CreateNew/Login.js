@@ -1,16 +1,26 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import ReactDOM from 'react-dom';
 
 class Login extends Component {
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
-      let inline = {display : "inline-block" };
+
     return (
 
     <div>
       <form>
         <h3>Name</h3>
-        <input type="text"/>
+        <input
+          type="text"
+          onChange = {this.handleInputChange}
+        />
         <h3>Password</h3>
         <input type="password"/>
         <br />
