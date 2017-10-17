@@ -35,12 +35,6 @@ class Login extends Component {
           value={this.state.userName}
         />
         <h3>Password</h3>
-<<<<<<< HEAD
-        <input type="password"/>
-        <br />
-        <br />
-        <input id="login" type="button" value="Submit"/>
-=======
         <input
           type = "password"
           name="password"
@@ -50,7 +44,6 @@ class Login extends Component {
         <button
           onClick = {this.loginSubmit}
         >Submit</button>
->>>>>>> test
       </form>
     </div>
     )
