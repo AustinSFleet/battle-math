@@ -22,9 +22,12 @@ class App extends Component {
 
   loginSubmit = event => {
     event.preventDefault();
+    var loginData = {
+      userName: this.state.userName,
+      password: this.state.password,
+    }
+
   }
-
-
 
   render() {
     return (
