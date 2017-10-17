@@ -5203,6 +5203,10 @@ react-error-overlay@^2.0.2:
     settle-promise "1.0.0"
     source-map "0.5.6"
 
+react-password-mask@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-password-mask/-/react-password-mask-3.0.0.tgz#8bc4f95491794dbdf07b4fd9fdc03244324396a6"
+
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"

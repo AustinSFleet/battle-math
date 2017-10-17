@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
+import PasswordMask from 'react-password-mask';
 
 class Login extends Component {
+  state = {
+    userName: "",
+    password: ""
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -9,6 +14,12 @@ class Login extends Component {
       [name]: value
     });
   };
+
+  loginSubmit = event => {
+    event.preventDefault();
+    console.log (this.state.userName);
+    console.log (this.state.password)
+  }
 
   render() {
 
@@ -20,12 +31,26 @@ class Login extends Component {
         <input
           type="text"
           onChange = {this.handleInputChange}
+          name = "userName"
+          value={this.state.userName}
         />
         <h3>Password</h3>
+<<<<<<< HEAD
         <input type="password"/>
         <br />
         <br />
         <input id="login" type="button" value="Submit"/>
+=======
+        <input
+          type = "password"
+          name="password"
+          onChange = {this.handleInputChange}
+          value={this.state.password}
+        />
+        <button
+          onClick = {this.loginSubmit}
+        >Submit</button>
+>>>>>>> test
       </form>
     </div>
     )
