@@ -1,0 +1,13 @@
+body {
+    background-image: url("https://i.imgur.com/2El2Of7.jpg"); 
+}
+
+#trump {
+    background: transparent url("./../Assets/photos/trumpdee.png");
+    /* background-repeat: no-repeat; */
+    background-position: 50% 50%;
+    /* put the height and width of your image here */
+    height: 100px;
+    width: 100px;
+    border: none;
+}

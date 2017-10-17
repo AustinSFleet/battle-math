@@ -3,6 +3,7 @@ import Battle_Wrapper from './Battle_Wrapper';
 import Test_Map from './Test_Map';
 import '../App.css';
 
+
 class Main extends Component {
   state = {
     seeBattle_Wrapper:{display: "none"},

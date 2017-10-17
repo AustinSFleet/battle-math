@@ -8,17 +8,17 @@ class Test_Map extends Component {
   render() {
     return (
       <div>
-        <button
+        <button id="trump"
           style={this.props.seeMonsterBtns}
           onClick={this.props.monsterClick}
           value="0"
-        >Trump</button>
-        <button
+        ></button>
+        <button id="teenager"
           style={this.props.seeMonsterBtns}
           onClick={this.props.monsterClick}
           value="1"
         >Gross Teenager</button>
-        <button
+        <button id="bob"
           style={this.props.seeMonsterBtns}
           onClick={this.props.monsterClick}
           value="3"
