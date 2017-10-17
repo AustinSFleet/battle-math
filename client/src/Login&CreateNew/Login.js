@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import './Login.css';
 import PasswordMask from 'react-password-mask';
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -11,7 +12,10 @@ class Login extends Component {
 
     <div>
       <form>
-        <h1>Login</h1>
+        <div className="titleBox">
+          <h1>Login</h1>
+          <Link to="/new_character" id="createLink">Create New Character</Link>
+        </div>
         <p>Name</p>
         <input
           type="text"
@@ -26,9 +30,11 @@ class Login extends Component {
           onChange = {this.props.handleInputChange}
           value={this.props.password}
         />
-        <button
-          onClick = {this.props.loginSubmit}
-        >Submit</button>
+        <div>
+          <button
+            onClick = {this.props.loginSubmit}
+          > Submit </button>
+        </div>
       </form>
     </div>
     )

@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
   login: function(loginData) {
     return axios.post("/api/login", loginData);
     .then(function (response) {
@@ -12,7 +11,7 @@ export default {
     });
   },
 
-  newUser function(newUserData) {
+  newUser: function(newUserData) {
     return axios.post("/api/newUser", loginData);
     .then(function (response) {
       console.log(response);
@@ -22,7 +21,7 @@ export default {
     });
   },
 
-  update function(newUserData) {
+  update: function(newUserData) {
     return axios.post("/api/newUser", updateData);
     .then(function (response) {
       console.log(response);

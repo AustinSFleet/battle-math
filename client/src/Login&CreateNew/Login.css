@@ -11,7 +11,18 @@ form{
 h1{
   font-size: 70px;
   border-bottom: 2px inset #BBB;
+  display:inline;
+}
+a{
+    text-decoration: none;
+    color: black;
+    float: right;
+    text-shadow: none;
+    color: #444;
+}
+.titleBox{
   margin-bottom: 35px;
+  border-bottom: 2px inset #BBB;
 }
 
 p{
@@ -24,7 +35,8 @@ input{
 }
 
 button{
-  width: 100px;
+  padding: 0 20p
   height: 50px;
   font-size: 25px;
+  margin: 30px 15px 0 0;
 }
