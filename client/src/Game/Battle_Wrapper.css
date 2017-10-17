@@ -4,7 +4,33 @@ body {
 
 #trump {
     background: transparent url("./../Assets/photos/trumpdee.png");
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    margin-left: -425px;
+    margin-top:140px;
+    /* put the height and width of your image here */
+    height: 100px;
+    width: 100px;
+    border: none;
+}
+
+#teenager {
+    background: transparent url("./../Assets/photos/TiffanyIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    margin-top:250px;
+    margin-right: -100px;
+    /* put the height and width of your image here */
+    height: 100px;
+    width: 100px;
+    border: none;
+}
+
+#bob {
+    background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
+    background-repeat: no-repeat;
     background-position: 50% 50%;
     /* put the height and width of your image here */
     height: 100px;

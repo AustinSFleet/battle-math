@@ -17,12 +17,12 @@ class Test_Map extends Component {
           style={this.props.seeMonsterBtns}
           onClick={this.props.monsterClick}
           value="1"
-        >Gross Teenager</button>
+        ></button>
         <button id="bob"
           style={this.props.seeMonsterBtns}
           onClick={this.props.monsterClick}
           value="3"
-        >Bob</button>
+        ></button>
       </div>
     );
   }
