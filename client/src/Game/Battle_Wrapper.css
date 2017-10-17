@@ -3,12 +3,12 @@ body {
 }
 
 #trump {
-    background: transparent url("./../Assets/photos/trump5.png");
+    background: transparent url("./../Assets/photos/trump5icon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     margin-left: -425px;
-    margin-top:140px;
+    margin-top:250px;
     /* put the height and width of your image here */
     height: 250px;
     width: 250px;
@@ -32,6 +32,7 @@ body {
     background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    position: absolute;
     /* put the height and width of your image here */
     height: 100px;
     width: 100px;

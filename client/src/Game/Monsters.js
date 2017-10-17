@@ -1,11 +1,11 @@
 export default {
-
+  
 monsters: [{
   name: "Trump",
   experience: 30,
   attack: ()=> {
     return(3 + Math.floor(2 * Math.random()))},
-  img:"/images/Gnome_ruler.png",
+  img:"/images/trump5battle.png",
   HP: 10,
   maxHP: 10
 },
@@ -32,7 +32,7 @@ monsters: [{
   experience: 50,
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
-  img:"/images/Nice_King.png",
+  img:"/images/Gnome_ruler.png",
   HP: 30,
   maxHP: 30
 }]
