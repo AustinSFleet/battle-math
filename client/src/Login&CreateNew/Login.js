@@ -3,23 +3,6 @@ import ReactDOM from 'react-dom';
 import PasswordMask from 'react-password-mask';
 
 class Login extends Component {
-  state = {
-    userName: "",
-    password: ""
-  }
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  loginSubmit = event => {
-    event.preventDefault();
-    console.log (this.state.userName);
-    console.log (this.state.password)
-  }
 
   render() {
 
@@ -30,27 +13,20 @@ class Login extends Component {
         <h3>Name</h3>
         <input
           type="text"
-          onChange = {this.handleInputChange}
+          onChange = {this.props.handleInputChange}
           name = "userName"
-          value={this.state.userName}
+          value={this.props.userName}
         />
         <h3>Password</h3>
-<<<<<<< HEAD
-        <input type="password"/>
-        <br />
-        <br />
-        <input id="login" type="button" value="Submit"/>
-=======
         <input
           type = "password"
           name="password"
-          onChange = {this.handleInputChange}
-          value={this.state.password}
+          onChange = {this.props.handleInputChange}
+          value={this.props.password}
         />
         <button
-          onClick = {this.loginSubmit}
+          onClick = {this.props.loginSubmit}
         >Submit</button>
->>>>>>> test
       </form>
     </div>
     )
