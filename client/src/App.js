@@ -8,26 +8,37 @@ import './App.css';
 
 class App extends Component {
   state = {
-    me: {
-      name: "Zed",
-      level: 1,
-      experience: 0,
-      abilities: [],
-      items: [],
-      maxHP: 20,
-      img:"/images/Finn.png",
-      HP: 12,
-      maxHP: 12
-    },
+    me: {},
+    userName: "",
+    password: ""
   };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  loginSubmit = event => {
+    event.preventDefault();
+  }
+
+
 
   render() {
     return (
       <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/main" component={Main} character={this.state.me}/>
+          <Route exact path="/login"
+            component={Login}
+            handleInputChange={this.handleInputChange}
+            loginSubmit={this.loginSubmit}
+            userName={this.state.userName}
+            password={this.state.password}
+          />
+          <Route exact path="/" component={Main} character={this.state.me}/>
           <Route exact path="/new_character" component={Create} />
           <Route component={NoMatch} />
         </Switch>
