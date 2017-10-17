@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
+import './Login.css';
 import PasswordMask from 'react-password-mask';
 
 class Login extends Component {
@@ -10,14 +11,15 @@ class Login extends Component {
 
     <div>
       <form>
-        <h3>Name</h3>
+        <h1>Login</h1>
+        <p>Name</p>
         <input
           type="text"
           onChange = {this.props.handleInputChange}
           name = "userName"
           value={this.props.userName}
         />
-        <h3>Password</h3>
+        <p>Password</p>
         <input
           type = "password"
           name="password"
