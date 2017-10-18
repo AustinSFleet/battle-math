@@ -31,7 +31,7 @@ class App extends Component {
       userName: this.state.userName,
       password: this.state.password,
     }
-    API.login(loginData)
+    API.login(loginData).then(console.log)
   };
 
   createCharacter = event => {
@@ -44,7 +44,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/login"
-            component={Login}
+            render={() => <Login/>}
             handleInputChange={this.handleInputChange}
             loginSubmit={this.loginSubmit}
             userName={this.state.userName}
@@ -60,8 +60,11 @@ class App extends Component {
 
           />
           <Route exact path="/"
-            component={Main}
-            character={this.state.me}/>
+            render={() => Object.keys(this.state.me).length ?
+              <Main character={this.state.me} /> :
+              <Login />
+            }
+          />
           <Route component={NoMatch} />
         </Switch>
       </div>
