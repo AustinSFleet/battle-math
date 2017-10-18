@@ -4,6 +4,7 @@ import Main from './Game/Main';
 import Login from './Login&CreateNew/Login';
 import Create from './Login&CreateNew/Create';
 import NoMatch from './NoMatch';
+import API from "./utils/API"
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
       userName: this.state.userName,
       password: this.state.password,
     }
+    API.login(loginData)
   };
 
   createCharacter = event => {
