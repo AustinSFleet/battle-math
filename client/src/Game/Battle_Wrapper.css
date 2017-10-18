@@ -3,20 +3,21 @@ body {
 }
 
 #trump {
-    background: transparent url("./../Assets/photos/trump5icon.png");
+    background: transparent url("./../Assets/photos/trumpicon3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     margin-left: -425px;
     margin-top:250px;
     /* put the height and width of your image here */
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     border: none;
+   
 }
 
 #teenager {
-    background: transparent url("./../Assets/photos/TiffanyIcon.png");
+    background: transparent url("./../Assets/photos/Tiffany3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
@@ -26,15 +27,34 @@ body {
     height: 200px;
     width: 200px;
     border: none;
+   
+
 }
 
 #bob {
-    background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
+    background: transparent url("./../Assets/photos/BOBicon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     /* put the height and width of your image here */
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     border: none;
+   margin-left: -110px;
+}
+
+#battleReady {
+    background: transparent url("./../Assets/photos/battle.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 210px;
+    width: 210px;
+    border: none;
+    color: rgb(14, 13, 13);
+    margin-top: 250px;
+    margin-right: 200px;
+    font-family: Impact, Charcoal, sans-serif;
+    text-shadow: 2px 2px rgb(253, 253, 253);
 }
