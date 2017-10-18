@@ -7,7 +7,7 @@ var bCrypt          = require('bcrypt-nodejs');
 var app             = express();
 var LocalStrategy   = require('passport-local').Strategy;
 var db              = require("./models");
-var PORT            = process.env.PORT || 8080;
+var PORT            = process.env.PORT || 3001;
 var cookieParser    = require('cookie-parser');
 //use bodyParser
 app.use(bodyParser.json());
@@ -24,7 +24,7 @@ app.use(require('cookie-parser')());
 app.use(passport.initialize());
 app.use(passport.session())
 //initialize passport
-
+app.use(express.static(path.resolve(__dirname, "client/build")));
 app.use(cookieParser('keyboardCat'));
 
 
@@ -54,8 +54,7 @@ passport.deserializeUser(function(user, cb) {
    cb(null, user);
     });
 //This is to serialize User and deserialize user
- 
-  
+
 
 //initialize passport
 app.use(express.static("public"));
