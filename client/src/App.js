@@ -10,7 +10,11 @@ class App extends Component {
   state = {
     me: {},
     userName: "",
-    password: ""
+    password: "",
+    setUserName: "",
+    setPassword: "",
+    confirmPassword: "",
+
   };
 
   handleInputChange = event => {
@@ -26,6 +30,9 @@ class App extends Component {
       userName: this.state.userName,
       password: this.state.password,
     }
+  };
+
+  createCharacter = event => {
 
   }
 
@@ -41,8 +48,18 @@ class App extends Component {
             userName={this.state.userName}
             password={this.state.password}
           />
-          <Route exact path="/" component={Main} character={this.state.me}/>
-          <Route exact path="/new_character" component={Create} />
+          <Route exact path="/new_character"
+            component={Create}
+            handleInputChange={this.handleInputChange}
+            setUserName={this.state.setUserName}
+            setPassword={this.state.setPassword}
+            confirmPassword={this.state.confirmPassword}
+            createCharacter={this.createCharacter}
+
+          />
+          <Route exact path="/"
+            component={Main}
+            character={this.state.me}/>
           <Route component={NoMatch} />
         </Switch>
       </div>
