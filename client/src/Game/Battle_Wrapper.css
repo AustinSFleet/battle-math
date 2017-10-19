@@ -1,5 +1,7 @@
 body {
-    background-image: url("./../Assets/photos/map2.png"); 
+    background-image: url("./../Assets/photos/map2.png");
+    background-size: cover
+
 }
 
 #trump {
@@ -37,4 +39,66 @@ body {
     height: 100px;
     width: 100px;
     border: none;
+}
+
+#battle-box{
+    margin-top: 90px;
+}
+
+.battler{
+  margin-top: 0;
+  position: relative;
+  bottom: 40px;
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 40px;
+}
+
+#results{
+    position: relative;
+    bottom: 95px;
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+
+    text-shadow: 2px 2px white;
+}
+
+#vs{
+  color: white;
+  text-shadow: 2px 2px black;
+  border: clear;
+  display: inline-flex;
+  position: relative;
+  bottom: 220px;
+  right: 20px;
+  font-size: 20px;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.healthbar{
+  color: white;
+  text-shadow: 1px 1px black;
+  position: relative;
+  bottom: 60px;
+}
+
+#answer-form{
+  position: relative;
+  bottom: 140px;
+  font-size: 20px;
+  padding: 0px 20px 20px 30px;
+}
+
+#submitAnswer{
+  margin-bottom: 15px;
+}
+
+#fireworks{
+  position: relative;
+  right: 190px;
+  display: none;
 }

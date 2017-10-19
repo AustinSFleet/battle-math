@@ -4,48 +4,44 @@ import "./Create.css"
 class Create extends Component {
 
   state = {
-    page1: {display:"block"},
-    page2: {display:"none"},
     images: [
       {
         name:"finn",
-        value:"/images/Finn.jpg",
+        data:"/images/Finn.jpg",
         alt:"Adventure Time Finn",
         src:"images/small_Finn.png"
       },
       {
         name:"mario",
-        value:"/images/mario.jpg",
+        data:"/images/mario.jpg",
         alt:"super mario",
         src:"images/small_mario.png"
       },
       {
         name:"leonardo",
-        value:"/images/leonardo.jpg",
+        data:"/images/leonardo.jpg",
         alt:"ninja turtle leonardo",
         src:"images/small_leonardo.png"
       },
       {
         name:"gumball",
-        value:"/images/gumball.jpg",
+        data:"/images/gumball.jpg",
         alt:"gumball",
         src:"images/small_gumball.png"
       },
       {
         name:"batman",
-        value:"/images/batman.jpg",
+        data:"/images/batman.jpg",
         alt:"lego batman",
         src:"images/small_batman.png"
+      },
+      {
+        name:"spongebob",
+        data:"/images/spongebob.jpg",
+        alt:"lego batman",
+        src:"images/small_spongebob.png"
       }
     ]
-  }
-
-  pageChange = (event) => {
-    event.preventDefault();
-    this.setState({
-      page1: {display:"none"},
-      page2: {display:"block"}
-    })
   }
 
   render() {
@@ -53,7 +49,7 @@ class Create extends Component {
     return (
 
       <div>
-          <div id="create1" style={this.state.page1}>
+          <div id="create1" style={this.props.page1}>
             <form>
               <div className="titleBox">
                 <h1>New Character</h1>
@@ -62,13 +58,13 @@ class Create extends Component {
               <input
                 type="text"
                 onChange = {this.props.handleInputChange}
-                name = "userName"
+                name = "setUserName"
                 value={this.props.setUserName}
               />
               <p>Password</p>
               <input
                 type = "password"
-                name="password"
+                name="setPassword"
                 onChange = {this.props.handleInputChange}
                 value={this.props.setPassword}
               />
@@ -77,36 +73,29 @@ class Create extends Component {
                 type = "password"
                 name="confirmPassword"
                 onChange = {this.props.handleInputChange}
-                value={this.props.password}
+                value={this.props.confirmPassword}
               />
               <div>
                 <button
-                  onClick = {this.pageChange}
-                > Submit </button>
+                  onClick = {this.props.pageChange}
+                > Next </button>
               </div>
               </form>
             </div>
 
-            <div id="create2" style={this.state.page2}>
+            <div id="create2" style={this.props.page2}>
               <form>
-                <h1>How do you want to look?</h1>
-
+              <h1 id="pick-img-head">What do you want to look like?</h1>
                 <div id="pick-img-box">
-                  {this.state.images.map(image => (
-                    <div className="pick-img">
-                      <input
-                        type="radio"
-                        name={image.name}
-                        value={image.value}
-                      />
+                  {this.state.images.map((image => (
+                    <div key={image.name} className="pick-img">
                       <img
-                        alt={image.alt}
+                        alt={image.data}
                         src={image.src}
-                      />
+                        onClick =  {this.props.createCharacter}/>
                     </div>
-                  ))}
+                  )))}
                 </div>
-
               </form>
             </div>
 
