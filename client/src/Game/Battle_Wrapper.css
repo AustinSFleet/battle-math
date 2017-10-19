@@ -128,3 +128,12 @@ body {
   right: 190px;
   display: none;
 }
+
+.page-header {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    text-shadow: 3px 3px white;
+    margin-top: -20px
+}
+

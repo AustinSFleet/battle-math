@@ -185,7 +185,7 @@ class Battle_Wrapper extends Component {
   render () {
     return (
      <div>
-      <img src="./../Assets/photos/coin.jpg" />
+      
       <div
         style={this.props.visible}
       >

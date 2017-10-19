@@ -3,6 +3,7 @@ import Battle_Wrapper from './Battle_Wrapper';
 import Test_Map from './Test_Map';
 import Monsters from './Monsters'
 import '../App.css';
+import StatusBar from "./StatusBar";
 
 
 class Main extends Component {
@@ -59,10 +60,9 @@ class Main extends Component {
   render() {
     return (
       <div className="App">
-        <div id="coinBox">
-          <img src="./../Assets/photos/coin.jpg"/>
-
-        </div>
+        
+        <StatusBar
+         name={this.state.me.name}/>
         <Battle_Wrapper
           visible={this.state.seeBattle_Wrapper}
           me={this.state.me}

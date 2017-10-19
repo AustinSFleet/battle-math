@@ -16,7 +16,7 @@ class App extends Component {
       abilities: [],
       items: [],
       maxHP: 20,
-      img:"/images/leonardo.png",
+      img:"/images/gumballFight.png",
       HP: 12,
       maxHP: 12
     },
