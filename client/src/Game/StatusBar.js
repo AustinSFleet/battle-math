@@ -9,8 +9,9 @@ class StatusBar extends Component {
 render () {
    return ( 
    <div class= "page-header">
-        Name: {this.props.name}
-        <img id="coinIMG" src="images/coin.png" alt="coin"/>
+        
+        Name: {this.props.name}  
+        Level: {this.props.level}
         
     </div>
    )}
