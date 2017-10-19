@@ -1,5 +1,14 @@
+#pick-img-head{
+  font-size: 37px;
+  margin: auto;
+  text-align: center;
+}
 #pick-img-box{
-  style: inline-flex;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 50px;
 }
 .pick-img{
   padding: 15px;

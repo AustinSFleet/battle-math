@@ -1,5 +1,5 @@
 body {
-    background-image: url("./../Assets/photos/map2.png"); 
+    background-image: url("./../Assets/photos/map2.png");
 }
 
 #trump {
@@ -37,4 +37,15 @@ body {
     height: 100px;
     width: 100px;
     border: none;
+}
+
+.battler{
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 40px;
+}
+#vs{
+  color: white;
+  text-shadow: 2px 2px black;
+  border: clear;
 }
