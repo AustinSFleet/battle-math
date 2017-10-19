@@ -30,23 +30,14 @@ class Battle_Wrapper extends Component {
   };
 
   handleAttack = (event) => {
-    if (event.target.id === "add"){
-    let newProblem = Attacks.addAttack();
+    console.log(event.target.id)
+    const newProblem = Attacks.abilities[event.target.id].problem();
     this.setState({
       problem: newProblem,
       seeAttackBtns: {display : "none" },
       seeProblemBox: {display : "block"}
     });
-  }
-  else if (event.target.id === "subtract") {
-    let newProblem = Attacks.subtractionHeal();
-    this.setState({
-      problem: newProblem,
-      seeAttackBtns: {display : "none" },
-      seeProblemBox: {display : "block"}
-    });
-  }
-};
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
