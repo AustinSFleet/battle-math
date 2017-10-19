@@ -50,19 +50,21 @@ body {
 }
 
 #battleReady {
-    background: transparent url("./../Assets/photos/battle.png");
+    background: transparent url("./../Assets/photos/battle2.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     /* put the height and width of your image here */
-    height: 210px;
-    width: 210px;
+    height: 275px;
+    width: 275px;
     border: none;
     font: Impact, fantasy;
     font-size: 35px;
     font-weight: bold;
     text-shadow: 2px 2px #ffffff;
     margin-top: 15%;
+    margin-left: -10%;
+    
 }
 
 #battle-box{
