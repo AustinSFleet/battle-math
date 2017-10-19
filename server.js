@@ -7,10 +7,6 @@ var bCrypt          = require('bcrypt-nodejs');
 var app             = express();
 var LocalStrategy   = require('passport-local').Strategy;
 var db              = require("./models");
-<<<<<<< HEAD
-var PORT            = process.env.PORT || 3001;
-=======
->>>>>>> test
 var cookieParser    = require('cookie-parser');
 //use bodyParser
 var express = require("express");
@@ -58,7 +54,12 @@ passport.use(new LocalStrategy(
 
 //This is to serialize User and deserialize user  
 passport.serializeUser(function(user, cb) {
-    cb(null, user);
+  cb(null, user);
+});
+
+passport.deserializeUser(function(user, cb) {
+ cb(null, user);
+  });
 var db = require("./models/index.js");
 app.use(express.static(path.resolve(__dirname,"client/build")));
 // Static directory

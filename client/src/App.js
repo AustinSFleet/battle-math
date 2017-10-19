@@ -9,12 +9,18 @@ import './App.css';
 
 class App extends Component {
   state = {
-<<<<<<< HEAD
-    me: {},
-    userName: "",
-    password: ""
-=======
-    me: {me: 6},
+    me: {
+      name: "Zed",
+      level: 1,
+      experience: 0,
+      abilities: [],
+      items: [],
+      maxHP: 20,
+      img:"/images/leonardo.png",
+      HP: 12,
+      maxHP: 12
+    },
+
     userName: "",
     password: "",
     setUserName: "",
@@ -22,7 +28,7 @@ class App extends Component {
     confirmPassword: "",
     page1: {display:"block"},
     page2: {display:"none"}
->>>>>>> test
+
   };
 
   handleInputChange = event => {
@@ -34,17 +40,12 @@ class App extends Component {
 
   loginSubmit = event => {
     event.preventDefault();
-<<<<<<< HEAD
-  }
-
-
-=======
     var loginData = {
       userName: this.state.userName,
       password: this.state.password,
     }
     console.log(loginData);
-    API.login(loginData).then(console.log)
+    API.login(loginData).then(console.log);
   };
 
   pageChange = (event) => {
@@ -72,7 +73,7 @@ class App extends Component {
     console.log(event.target.alt)
     console.log(newUserData);
   }
->>>>>>> test
+
 
   render() {
     return (
@@ -80,21 +81,20 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/login"
-<<<<<<< HEAD
+
             component={Login}
-=======
+
             render={() => (<Login
->>>>>>> test
+
             handleInputChange={this.handleInputChange}
             loginSubmit={this.loginSubmit}
             userName={this.state.userName}
             password={this.state.password}
-<<<<<<< HEAD
+              />)}/>
           />
           <Route exact path="/" component={Main} character={this.state.me}/>
           <Route exact path="/new_character" component={Create} />
-=======
-          />)}/>
+
 
           <Route exact path="/new_character"
             render={() => (<Create
@@ -120,7 +120,7 @@ class App extends Component {
             />
             }
           />
->>>>>>> test
+
           <Route component={NoMatch} />
         </Switch>
       </div>
