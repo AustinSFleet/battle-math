@@ -149,7 +149,7 @@ class Battle_Wrapper extends Component {
         >
           <button id="battleReady"
             onClick={this.handleBattleReady}
-          >Ready for Battle?</button>
+          ></button>
         </div>
         <div id="battle_view"
           style={this.state.seeBattle_view}
