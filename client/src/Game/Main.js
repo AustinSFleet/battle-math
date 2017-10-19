@@ -41,6 +41,7 @@ class Main extends Component {
     upMe.experience += monster.experience;
     upMe.level = Math.floor(this.state.me.experience / 60) + 1
     if (upMe.level > this.state.me.level){
+      upMe.maxHP += 8;
       alert(`You have gained a level!, You are now a level ${upMe.level} adventurer!`);
     }
     this.setState({
@@ -54,7 +55,6 @@ class Main extends Component {
     this.setState({
       me: this.props.character
     })
-    console.log(this.state.me.experience)
   }
 
   render() {
