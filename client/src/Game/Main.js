@@ -33,7 +33,6 @@ class Main extends Component {
       seeBattle_Wrapper: {display: "block"},
       seeMonsterBtns: {display: "none"}
     });
-    console.log(monsterPick);
   }
 
   afterBattleUpdate = (monster) => {
@@ -50,10 +49,11 @@ class Main extends Component {
     this.props.updateMe(upMe);
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(){
     this.setState({
-      me: this.nextProps.me
+      me: this.props.character
     })
+    console.log(this.state.me.experience)
   }
 
   render() {
