@@ -1,49 +1,41 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
+import './Login.css';
 import PasswordMask from 'react-password-mask';
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
-  state = {
-    userName: "",
-    password: ""
-  }
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  loginSubmit = event => {
-    event.preventDefault();
-    console.log (this.state.userName);
-    console.log (this.state.password)
-  }
 
   render() {
 
     return (
 
     <div>
+    <h2>{this.props.thing}</h2>
       <form>
-        <h3>Name</h3>
+        <div className="titleBox">
+          <h1>Login</h1>
+          <Link to="/new_character" id="createLink">Create New Character</Link>
+        </div>
+        <p>Name</p>
         <input
           type="text"
-          onChange = {this.handleInputChange}
+          onChange = {this.props.handleInputChange}
           name = "userName"
-          value={this.state.userName}
+          value={this.props.userName}
         />
-        <h3>Password</h3>
+        <p>Password</p>
         <input
           type = "password"
           name="password"
-          onChange = {this.handleInputChange}
-          value={this.state.password}
+          onChange = {this.props.handleInputChange}
+          value={this.props.password}
         />
-        <button
-          onClick = {this.loginSubmit}
-        >Submit</button>
+        <div>
+          <button
+            onClick = {this.props.loginSubmit}
+          > Submit </button>
+        </div>
       </form>
     </div>
     )

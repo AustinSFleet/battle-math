@@ -1,0 +1,51 @@
+body {
+    background-image: url("./../Assets/photos/map2.png");
+}
+
+#trump {
+    background: transparent url("./../Assets/photos/trump5icon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    margin-left: -425px;
+    margin-top:250px;
+    /* put the height and width of your image here */
+    height: 250px;
+    width: 250px;
+    border: none;
+}
+
+#teenager {
+    background: transparent url("./../Assets/photos/TiffanyIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    margin-top:250px;
+    margin-right: -100px;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+}
+
+#bob {
+    background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 100px;
+    width: 100px;
+    border: none;
+}
+
+.battler{
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 40px;
+}
+#vs{
+  color: white;
+  text-shadow: 2px 2px black;
+  border: clear;
+}

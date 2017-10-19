@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
+import "./Battle_Wrapper.css";
 
 class Battle_Wrapper extends Component {
   state = {
