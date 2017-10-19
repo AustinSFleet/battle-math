@@ -1,5 +1,5 @@
 export default {
-  
+
 monsters: [{
   name: "Trump",
   experience: 30,
@@ -36,5 +36,4 @@ monsters: [{
   HP: 30,
   maxHP: 30
 }]
-
 }
