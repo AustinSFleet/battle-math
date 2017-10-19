@@ -29,6 +29,13 @@ class Battle_Wrapper extends Component {
     })
   };
 
+  componentWillReceiveProps(){
+    this.setState({
+      me: this.props.me
+    })
+    console.log(this.state.me)
+  }
+
   handleAttack = (event) => {
     console.log(event.target.id)
     const newProblem = Attacks.abilities[event.target.id].problem();
