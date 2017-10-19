@@ -1,5 +1,6 @@
 body {
-    background-image: url("./../Assets/photos/map2.png"); 
+    background-image: url("./../Assets/photos/map2.png");
+    background-size: cover;
 }
 
 #trump {
@@ -29,9 +30,6 @@ body {
     border: none;
     position: fixed;
     
-   
-   
-
 }
 
 #bob {

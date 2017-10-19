@@ -49,7 +49,7 @@ class Main extends Component {
     }
     this.setState({
       seeBattle_Wrapper: {display: "none"},
-      seeMonsterBtns: {display: "block"},
+      seeMonsterBtns: {display: "inline"},
       me: upMe})
     console.log(this.state.me)
   }
@@ -57,6 +57,10 @@ class Main extends Component {
   render() {
     return (
       <div className="App">
+        <div id="coinBox">
+          <img src="./../Assets/photos/coin.jpg"/>
+          
+        </div>
         <Battle_Wrapper
           visible={this.state.seeBattle_Wrapper}
           me={this.state.me}
