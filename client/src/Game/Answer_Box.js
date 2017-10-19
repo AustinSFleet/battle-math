@@ -10,7 +10,9 @@ class Answer_Box extends Component {
           style={this.props.state.seeProblemBox}>
           <button
             id="submitAnswer"
-            onClick={this.props.submit}>{this.props.state.problem.problemDisplay}
+            onClick={this.props.submit}
+            >
+            {this.props.state.problem.problemDisplay}
           </button>
           <input
             type="input"

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
+import Attacks from "./Attacks.js"
 import "./Battle_Wrapper.css";
 
 class Battle_Wrapper extends Component {
@@ -30,7 +31,7 @@ class Battle_Wrapper extends Component {
 
   handleAttack = (event) => {
     if (event.target.id === "add"){
-    let newProblem = this.addProblem();
+    let newProblem = Attacks.addAttack();
     this.setState({
       problem: newProblem,
       seeAttackBtns: {display : "none" },
@@ -38,7 +39,7 @@ class Battle_Wrapper extends Component {
     });
   }
   else if (event.target.id === "subtract") {
-    let newProblem = this.subProblem();
+    let newProblem = Attacks.subtractionHeal();
     this.setState({
       problem: newProblem,
       seeAttackBtns: {display : "none" },
@@ -46,7 +47,6 @@ class Battle_Wrapper extends Component {
     });
   }
 };
-
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -135,51 +135,6 @@ class Battle_Wrapper extends Component {
 
   iDied = () => {
     alert("Don't you understand you dead?");
-  };
-
-  addProblem = () => {
-     let A = Math.floor(Math.random()*(10));
-     let B = Math.floor(Math.random()*(10));
-     let answer = A + B;
-     let damage = 4 + Math.floor(Math.random() * 3);
-     return ({
-       problemDisplay:`${A} + ${B}`,
-       answer: answer,
-       CoMeHP: 0,
-       CoMonHP: -(damage),
-       CoMeHead: "Correct Answer!",
-       CoMeSub: `You did ${damage} damage!`,
-
-       WrMeHP: 0,
-       WrMonHP: 0,
-       WrMeHead: "Wrong Answer!",
-       WrMeSub: "The correct answer was " + answer +".",
-
-      })
-  };
-
-  subProblem = () => {
-    let A = Math.floor(Math.random()*(10));
-    let B = Math.floor(Math.random()*(10));
-    let C;
-    if (B > A) {
-      C = A;
-      A = B;
-      B = C;
-    }
-    let answer = A - B;
-    let heal = 4 + Math.floor(Math.random() * 3);
-    return ({problemDisplay:`${A} - ${B}`,
-    answer: answer,
-    CoMeHP: +(heal),
-    CoMonHP: 0,
-    CoMeHead: "Correct Answer!",
-    CoMeSub: "You healed " + (heal) + " points!",
-
-    WrMeHP: 0,
-    WrMonHP: 0,
-    WrMeHead: "Wrong Answer!",
-    WrMeSub: "The correct answer was " + answer +".",})
   };
 
   render () {
