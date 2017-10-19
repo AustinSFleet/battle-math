@@ -9,7 +9,17 @@ import './App.css';
 
 class App extends Component {
   state = {
-    me: {me: 6},
+    me: {
+      name: "Zed",
+      level: 1,
+      experience: 0,
+      abilities: [],
+      items: [],
+      maxHP: 20,
+      img:"/images/leonardo.png",
+      HP: 12,
+      maxHP: 12
+    },
     userName: "",
     password: "",
     setUserName: "",
