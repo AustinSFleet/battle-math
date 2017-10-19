@@ -17,17 +17,13 @@ class Main extends Component {
       HP: 70,
       maxHP: 10
     },
-    me: {
-        name: "Zed",
-        level: 1,
-        experience: 0,
-        abilities: [],
-        items: [],
-        maxHP: 20,
-        img:"/images/Finn.png",
-        HP: 12,
-        maxHP: 12
-      }
+    me: {}
+  }
+
+  componentDidMount(){
+    this.setState({
+      me: this.props.me
+    })
   }
 
   handleMonsterClick = (event) => {
@@ -50,8 +46,14 @@ class Main extends Component {
     this.setState({
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "block"},
-      me: upMe})
-    console.log(this.state.me)
+    })
+    this.props.updateMe(upMe);
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      me: this.nextPropsme
+    })
   }
 
   render() {
