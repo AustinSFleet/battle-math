@@ -9,8 +9,8 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-left: -425px;
-    margin-top:250px;
+    margin-left: -35%;
+    margin-top:17.5%;
     /* put the height and width of your image here */
     height: 150px;
     width: 150px;
@@ -23,8 +23,8 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-top:200px;
-    margin-right: -100px;
+    margin-top:18%;
+    margin-right: 100%;
     /* put the height and width of your image here */
     height: 200px;
     width: 200px;
@@ -42,7 +42,8 @@ body {
     height: 200px;
     width: 200px;
     border: none;
-   margin-left: -110px;
+   margin-left: -5%;
+   margin-top: 0%;
    position:fixed;
    
    
@@ -57,6 +58,11 @@ body {
     height: 210px;
     width: 210px;
     border: none;
+    font: Impact, fantasy;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px #ffffff;
+    margin-top: 15%;
 }
 
 #battle-box{

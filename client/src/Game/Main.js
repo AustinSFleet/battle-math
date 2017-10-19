@@ -45,7 +45,7 @@ class Main extends Component {
     }
     this.setState({
       seeBattle_Wrapper: {display: "none"},
-      seeMonsterBtns: {display: "block"},
+      seeMonsterBtns: {display: "inline"},
     })
     this.props.updateMe(upMe);
   }
