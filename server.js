@@ -26,3 +26,7 @@ app.get("/", function(req, res) {
       console.log("App listening on PORT " + PORT);
     });
   });
+
+  app.post("/api/login", function(req,res){
+    console.log(req.body);
+  });

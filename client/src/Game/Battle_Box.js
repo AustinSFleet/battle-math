@@ -17,13 +17,13 @@ class Battle_Box extends Component {
     <div style={inline}>
       <div id="battle-me" style={inline}>
         <img src={this.props.state.me.img}/>
-        <h2>{this.props.state.me.name}</h2>
+        <h2 className="battler">{this.props.state.me.name}</h2>
         <p>{this.healthBar(this.props.state.me.HP)}</p>
       </div>
-      <h1 style={inline}>VS</h1>
+      <h1 id="vs" style={inline}>VS</h1>
       <div id="battle-monster" style={inline}>
         <img src={this.props.state.monster.img}/>
-        <h2>{this.props.state.monster.name}</h2>
+        <h2 className="battler">{this.props.state.monster.name}</h2>
         <p>{this.healthBar(this.props.state.monster.HP)}</p>
       </div>
     </div>
