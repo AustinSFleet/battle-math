@@ -10,13 +10,17 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-      name: "Zed",
+      name: "Null",
       level: 1,
       experience: 0,
       abilities: [],
       items: [],
       maxHP: 20,
+<<<<<<< HEAD
       img:"/images/gumballFight.png",
+=======
+      img:"/images/Finn.png",
+>>>>>>> test
       HP: 12,
       maxHP: 12
     },

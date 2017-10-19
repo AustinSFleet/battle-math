@@ -11,7 +11,6 @@ class Login extends Component {
     return (
 
     <div>
-    <h2>{this.props.thing}</h2>
       <form>
         <div className="titleBox">
           <h1>Login</h1>
