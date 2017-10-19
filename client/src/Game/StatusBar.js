@@ -10,7 +10,7 @@ render () {
    return ( 
    <div class= "page-header">
         
-        Name: {this.props.name}  
+        Name: {this.props.name} {" "}
         Level: {this.props.level}
         
     </div>

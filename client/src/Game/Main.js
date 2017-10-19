@@ -62,14 +62,17 @@ class Main extends Component {
       <div className="App">
         
         <StatusBar
-         name={this.state.me.name}
-         level={this.state.me.level}/>
+          name={this.state.me.name}
+          level={this.state.me.level}
+        />
+
         <Battle_Wrapper
           visible={this.state.seeBattle_Wrapper}
           me={this.state.me}
           monster={this.state.activeMonster}
           afterBattleUpdate={this.afterBattleUpdate}
         />
+
         <Test_Map
           monsterClick={this.handleMonsterClick}
           seeMonsterBtns={this.state.seeMonsterBtns}
