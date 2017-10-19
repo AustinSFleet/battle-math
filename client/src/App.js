@@ -29,6 +29,12 @@ class App extends Component {
     page2: {display:"none"}
   };
 
+  updateMe = (upMe) => {
+    this.setState({
+      me: upMe
+    })
+  }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -99,17 +105,18 @@ class App extends Component {
 
           />
           <Route exact path="/"
-            render={() => Object.keys(this.state.me).length ?
-              <Main character={this.state.me} /> :
-              <Login
-              handleInputChange={this.handleInputChange}
-              loginSubmit={this.loginSubmit}
-              userName={this.state.userName}
-              password={this.state.password}
+            render={() => Object.keys(this.state.me).length
+              ? <Main
+                character={this.state.me}
+                updateMe={this.updateMe} />
+              : <Login
+                handleInputChange={this.handleInputChange}
+                loginSubmit={this.loginSubmit}
+                userName={this.state.userName}
+                password={this.state.password}
             />
             }
           />
-          <Route component={NoMatch} />
         </Switch>
       </div>
     </Router>
