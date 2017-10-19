@@ -17,12 +17,12 @@ class Main extends Component {
       HP: 70,
       maxHP: 10
     },
-    me: {}
+    me: this.props.character
   }
 
   componentDidMount(){
     this.setState({
-      me: this.props.me
+      me: this.props.character
     })
   }
 
@@ -52,7 +52,7 @@ class Main extends Component {
 
   componentWillReceiveProps(nextProps){
     this.setState({
-      me: this.nextPropsme
+      me: this.nextProps.me
     })
   }
 
@@ -61,7 +61,7 @@ class Main extends Component {
       <div className="App">
         <div id="coinBox">
           <img src="./../Assets/photos/coin.jpg"/>
-          
+
         </div>
         <Battle_Wrapper
           visible={this.state.seeBattle_Wrapper}
