@@ -1,17 +1,32 @@
 body {
+<<<<<<< HEAD
     background-image: url("https://i.imgur.com/2El2Of7.jpg"); 
 }
 
 #trump {
     background: transparent url("./../Assets/photos/trumpdee.png");
+=======
+    background-image: url("./../Assets/photos/map2.png");
+}
+
+#trump {
+    background: transparent url("./../Assets/photos/trump5icon.png");
+>>>>>>> test
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     margin-left: -425px;
+<<<<<<< HEAD
     margin-top:140px;
     /* put the height and width of your image here */
     height: 100px;
     width: 100px;
+=======
+    margin-top:250px;
+    /* put the height and width of your image here */
+    height: 250px;
+    width: 250px;
+>>>>>>> test
     border: none;
 }
 
@@ -23,8 +38,13 @@ body {
     margin-top:250px;
     margin-right: -100px;
     /* put the height and width of your image here */
+<<<<<<< HEAD
     height: 100px;
     width: 100px;
+=======
+    height: 200px;
+    width: 200px;
+>>>>>>> test
     border: none;
 }
 
@@ -32,8 +52,27 @@ body {
     background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
+<<<<<<< HEAD
+=======
+    position: absolute;
+>>>>>>> test
     /* put the height and width of your image here */
     height: 100px;
     width: 100px;
     border: none;
+<<<<<<< HEAD
 }
+=======
+}
+
+.battler{
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 40px;
+}
+#vs{
+  color: white;
+  text-shadow: 2px 2px black;
+  border: clear;
+}
+>>>>>>> test

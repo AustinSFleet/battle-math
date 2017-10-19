@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Battle_Wrapper from './Battle_Wrapper';
 import Test_Map from './Test_Map';
+import Monsters from './Monsters'
 import '../App.css';
 
 
@@ -26,47 +27,11 @@ class Main extends Component {
         img:"/images/Finn.png",
         HP: 12,
         maxHP: 12
-      },
-    monsters: [{
-      name: "Trump",
-      experience: 30,
-      attack: ()=> {
-        return(3 + Math.floor(2 * Math.random()))},
-      img:"/images/Gnome_ruler.png",
-      HP: 10,
-      maxHP: 10
-    },
-    {
-      name: "Teenager",
-      experience: 30,
-      attack: ()=> {
-        return(2 + Math.floor(2 * Math.random()))},
-      img:"/images/Tiffany.png",
-      HP: 12,
-      maxHP: 12
-    },
-    {
-      name: "Creepy Vampire",
-      experience: 10,
-      attack: ()=> {
-        return(2 + Math.floor(2 * Math.random()))},
-      img:"/images/Marshall_Lee.png",
-      HP: 30,
-      maxHP: 30
-    },
-    {
-      name: "Bob",
-      experience: 50,
-      attack: ()=> {
-        return(1 + Math.floor(1 * Math.random()))},
-      img:"/images/Nice_King.png",
-      HP: 30,
-      maxHP: 30
-    }]
+      }
   }
 
   handleMonsterClick = (event) => {
-    let monsterPick = this.state.monsters[event.target.value]
+    let monsterPick = Monsters.monsters[event.target.value]
     this.setState({
       activeMonster: monsterPick,
       seeBattle_Wrapper: {display: "block"},
