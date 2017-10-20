@@ -157,12 +157,17 @@ body {
   right: 190px;
   display: none;
 }
+#statName, #statLevel {
+font-size: 25px;
+}
 
 .page-header {
 
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
-    text-shadow: 3px 3px white;
+    text-shadow: 1px 1px white;
+    align-content: left;
     
 }
+
 

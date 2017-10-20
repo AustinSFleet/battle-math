@@ -59,7 +59,7 @@ export default {
        let A = Math.floor(Math.random()*(100));
        let B = Math.floor(Math.random()*(100));
        let answer = A + B;
-       let damage = 6 + Math.floor(Math.random() * 3);
+       let damage = 10 + Math.floor(Math.random() * 10);
        return ({
          problemDisplay:`${A} + ${B}`,
          answer: answer,

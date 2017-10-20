@@ -45,8 +45,7 @@ class Main extends Component {
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
     })
-    console.log("WOO");
-    console.log(upMe);
+    
     this.props.updateMe(upMe);
   }
 
