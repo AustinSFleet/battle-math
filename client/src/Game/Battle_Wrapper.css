@@ -23,8 +23,8 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-top:18%;
-    margin-right: 100%;
+    margin-top:12%;
+    margin-right: 50%;
     /* put the height and width of your image here */
     height: 200px;
     width: 200px;
@@ -48,6 +48,35 @@ body {
    
    
 }
+
+#Marshall {
+    background: transparent url("./../Assets/photos/Marshall_Lee.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: 15%;
+   margin-top: 25%;
+   position:fixed;
+}
+
+#greg {
+    background: transparent url("./../Assets/photos/gregIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: -20%;
+   margin-top: 25%;
+   position:fixed;
+}
+
 
 #battleReady {
     background: transparent url("./../Assets/photos/battle2.png");

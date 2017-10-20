@@ -50,6 +50,29 @@ export default {
         WrMeHead: "Wrong Answer!",
         WrMeSub: "The correct answer was " + answer +".",})
       }
+      
+    },
+    {
+      name: "Critical Addition  Attack",
+      level: 3,
+      problem: () => {
+       let A = Math.floor(Math.random()*(100));
+       let B = Math.floor(Math.random()*(100));
+       let answer = A + B;
+       let damage = 6 + Math.floor(Math.random() * 3);
+       return ({
+         problemDisplay:`${A} + ${B}`,
+         answer: answer,
+         CoMeHP: 0,
+         CoMonHP: -(damage),
+         CoMeHead: "Correct Answer!",
+         CoMeSub: `You did ${damage} damage!`,
+
+         WrMeHP: 0,
+         WrMonHP: 0,
+         WrMeHead: "Wrong Answer!",
+         WrMeSub: "The correct answer was " + answer +".",})
+      }
     }
     ]
   };

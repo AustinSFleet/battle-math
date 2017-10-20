@@ -10,11 +10,7 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-<<<<<<< HEAD
-      name: "JIMMY",
-=======
       name: "Redman",
->>>>>>> test
       level: 1,
       experience: 0,
       abilities: [],
