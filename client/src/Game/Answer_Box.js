@@ -16,6 +16,7 @@ class Answer_Box extends Component {
             {this.props.state.problem.problemDisplay}
           </button>
           <input
+            className="userAnswerbox"
             type="input"
             name="userAnswer"
             onChange={this.props.onChange}
