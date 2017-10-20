@@ -38,6 +38,7 @@ class Main extends Component {
 
   afterBattleUpdate = (monster) => {
     let upMe = {...this.state.me};
+
     upMe.experience += monster.experience;
     upMe.level = Math.floor(this.state.me.experience / 60) + 1
     if (upMe.level > this.state.me.level){
@@ -48,6 +49,8 @@ class Main extends Component {
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
     })
+    console.log("WOO");
+    console.log(upMe);
     this.props.updateMe(upMe);
   }
 

@@ -38,7 +38,7 @@ monsters: [{
 },
 {
   name: "Greg",
-  experience: 50,
+  experience: 30,
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
   img:"/images/greg.png",

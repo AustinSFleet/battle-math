@@ -4,7 +4,7 @@ export default {
 
     {
       name: "Addition Attack",
-      level: 0,
+      level: 1,
       problem: () => {
        let A = Math.floor(Math.random()*(10));
        let B = Math.floor(Math.random()*(10));
@@ -26,7 +26,7 @@ export default {
     },
     {
       name: "Subtraction Heal",
-      level: 1,
+      level: 2,
       problem: () => {
         let A = Math.floor(Math.random()*(10));
         let B = Math.floor(Math.random()*(10));
