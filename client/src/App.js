@@ -107,7 +107,7 @@ class App extends Component {
           <Route exact path="/"
             render={() => Object.keys(this.state.me).length
               ? <Main
-                character={this.state.me}
+                me={this.state.me}
                 updateMe={this.updateMe} />
               : <Login
                 handleInputChange={this.handleInputChange}
