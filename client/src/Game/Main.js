@@ -17,11 +17,15 @@ class Main extends Component {
       img:"",
       HP: 70,
       maxHP: 10
-    }
-    
+    },
+    me: this.props.character
   }
 
-  
+  componentDidMount(){
+    this.setState({
+      me: this.props.character
+    })
+  }
 
   handleMonsterClick = (event) => {
     let monsterPick = Monsters.monsters[event.target.value]
@@ -33,11 +37,10 @@ class Main extends Component {
   }
 
   afterBattleUpdate = (monster) => {
-    let upMe = {...this.props.me};
-
+    let upMe = {...this.state.me};
     upMe.experience += monster.experience;
-    upMe.level = Math.floor(upMe.experience / 60) + 1
-    if (upMe.level > this.props.me.level){
+    upMe.level = Math.floor(this.state.me.experience / 60) + 1
+    if (upMe.level > this.state.me.level){
       upMe.maxHP += 8;
       alert(`You have gained a level!, You are now a level ${upMe.level} adventurer!`);
     }
@@ -45,27 +48,22 @@ class Main extends Component {
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
     })
-    console.log("WOO");
-    console.log(upMe);
     this.props.updateMe(upMe);
   }
-
 
 
   render() {
     return (
       <div className="App">
-        
+
         <StatusBar
-          name={this.props.me.name}
-          level={this.props.me.level}
-          
+          name={this.state.me.name}
+          level={this.state.me.level}
         />
 
         <Battle_Wrapper
           visible={this.state.seeBattle_Wrapper}
-          me={this.props.me}
-          updateMe={this.props.updateMe}
+          me={this.state.me}
           monster={this.state.activeMonster}
           afterBattleUpdate={this.afterBattleUpdate}
         />
