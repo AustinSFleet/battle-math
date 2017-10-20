@@ -17,14 +17,8 @@ class Main extends Component {
       img:"",
       HP: 70,
       maxHP: 10
-    },
-    me: this.props.character
-  }
+    }
 
-  componentDidMount(){
-    this.setState({
-      me: this.props.character
-    })
   }
 
   handleMonsterClick = (event) => {
@@ -57,8 +51,9 @@ class Main extends Component {
       <div className="App">
 
         <StatusBar
-          name={this.state.me.name}
-          level={this.state.me.level}
+          name={this.props.me.name}
+          level={this.props.me.level}
+
         />
 
         <Battle_Wrapper
