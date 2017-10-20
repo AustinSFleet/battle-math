@@ -1,51 +1,139 @@
 body {
     background-image: url("./../Assets/photos/map2.png");
+    background-size: cover
+
 }
 
 #trump {
-    background: transparent url("./../Assets/photos/trump5icon.png");
+    background: transparent url("./../Assets/photos/trumpicon3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-left: -425px;
-    margin-top:250px;
+    margin-left: -35%;
+    margin-top:17.5%;
     /* put the height and width of your image here */
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     border: none;
+   
 }
 
 #teenager {
-    background: transparent url("./../Assets/photos/TiffanyIcon.png");
+    background: transparent url("./../Assets/photos/Tiffany3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-top:250px;
-    margin-right: -100px;
+    margin-top:18%;
+    margin-right: 100%;
     /* put the height and width of your image here */
     height: 200px;
     width: 200px;
     border: none;
+    position: fixed;
+    
 }
 
 #bob {
-    background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
+    background: transparent url("./../Assets/photos/BOBicon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     /* put the height and width of your image here */
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     border: none;
+   margin-left: -5%;
+   margin-top: 0%;
+   position:fixed;
+   
+   
+}
+
+#battleReady {
+    background: transparent url("./../Assets/photos/battle2.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 275px;
+    width: 275px;
+    border: none;
+    font: Impact, fantasy;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px #ffffff;
+    margin-top: 15%;
+    margin-left: -10%;
+    
+}
+
+#battle-box{
+    margin-top: 90px;
 }
 
 .battler{
+  margin-top: 0;
+  position: relative;
+  bottom: 40px;
   color: white;
   text-shadow: 2px 2px black;
   font-size: 40px;
 }
+
+#results{
+    position: relative;
+    bottom: 95px;
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+
+    text-shadow: 2px 2px white;
+}
+
 #vs{
   color: white;
   text-shadow: 2px 2px black;
   border: clear;
+  display: inline-flex;
+  position: relative;
+  bottom: 220px;
+  right: 20px;
+  font-size: 20px;
 }
+
+.inline{
+  display: inline-block;
+}
+
+.healthbar{
+  color: white;
+  text-shadow: 1px 1px black;
+  position: relative;
+  bottom: 60px;
+}
+
+#answer-form{
+  position: relative;
+  bottom: 140px;
+  font-size: 20px;
+  padding: 0px 20px 20px 30px;
+}
+
+#submitAnswer{
+  margin-bottom: 15px;
+}
+
+#fireworks{
+  position: relative;
+  right: 190px;
+  display: none;
+}
+
+.page-header {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    text-shadow: 3px 3px white;
+    
+}
+

@@ -1,5 +1,5 @@
 export default {
-  
+
 monsters: [{
   name: "Trump",
   experience: 30,
@@ -15,7 +15,7 @@ monsters: [{
   attack: ()=> {
     return(2 + Math.floor(2 * Math.random()))},
   img:"/images/Tiffany.png",
-  HP: 12,
+  HP: 4,
   maxHP: 12
 },
 {
@@ -24,7 +24,7 @@ monsters: [{
   attack: ()=> {
     return(2 + Math.floor(2 * Math.random()))},
   img:"/images/Marshall_Lee.png",
-  HP: 30,
+  HP: 4,
   maxHP: 30
 },
 {
@@ -33,8 +33,7 @@ monsters: [{
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
   img:"/images/Gnome_ruler.png",
-  HP: 30,
+  HP: 4,
   maxHP: 30
 }]
-
 }

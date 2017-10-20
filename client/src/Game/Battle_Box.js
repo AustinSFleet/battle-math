@@ -11,20 +11,20 @@ class Battle_Box extends Component {
     };
 
   render() {
-      let inline = {display : "inline-block" };
     return (
 
-    <div style={inline}>
-      <div id="battle-me" style={inline}>
+    <div id="battle-box" className="inline">
+      <div id="battle-me" className="inline">
         <img src={this.props.state.me.img}/>
         <h2 className="battler">{this.props.state.me.name}</h2>
-        <p>{this.healthBar(this.props.state.me.HP)}</p>
+        <p className="healthbar">{this.healthBar(this.props.state.me.HP)}</p>
       </div>
-      <h1 id="vs" style={inline}>VS</h1>
-      <div id="battle-monster" style={inline}>
+      <h5 id="vs" className="inline">VS</h5>
+      <div id="battle-monster" className="inline">
         <img src={this.props.state.monster.img}/>
+          <img id="fireworks" src={"images/fireworksanimated.gif"}/>
         <h2 className="battler">{this.props.state.monster.name}</h2>
-        <p>{this.healthBar(this.props.state.monster.HP)}</p>
+        <p className="healthbar">{this.healthBar(this.props.state.monster.HP)}</p>
       </div>
     </div>
     )

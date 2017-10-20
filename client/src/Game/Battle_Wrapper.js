@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
+import Attacks from "./Attacks.js"
 import "./Battle_Wrapper.css";
 
 class Battle_Wrapper extends Component {
@@ -28,25 +29,22 @@ class Battle_Wrapper extends Component {
     })
   };
 
-  handleAttack = (event) => {
-    if (event.target.id === "add"){
-    let newProblem = this.addProblem();
+  componentWillReceiveProps(){
     this.setState({
-      problem: newProblem,
-      seeAttackBtns: {display : "none" },
-      seeProblemBox: {display : "block"}
-    });
+      me: this.props.me
+    })
+    console.log(this.state.me)
   }
-  else if (event.target.id === "subtract") {
-    let newProblem = this.subProblem();
-    this.setState({
-      problem: newProblem,
-      seeAttackBtns: {display : "none" },
-      seeProblemBox: {display : "block"}
-    });
-  }
-};
 
+  handleAttack = (event) => {
+    console.log(event.target.id)
+    const newProblem = Attacks.abilities[event.target.id].problem();
+    this.setState({
+      problem: newProblem,
+      seeAttackBtns: {display : "none" },
+      seeProblemBox: {display : "block"}
+    });
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -137,63 +135,19 @@ class Battle_Wrapper extends Component {
     alert("Don't you understand you dead?");
   };
 
-  addProblem = () => {
-     let A = Math.floor(Math.random()*(10));
-     let B = Math.floor(Math.random()*(10));
-     let answer = A + B;
-     let damage = 4 + Math.floor(Math.random() * 3);
-     return ({
-       problemDisplay:`${A} + ${B}`,
-       answer: answer,
-       CoMeHP: 0,
-       CoMonHP: -(damage),
-       CoMeHead: "Correct Answer!",
-       CoMeSub: `You did ${damage} damage!`,
-
-       WrMeHP: 0,
-       WrMonHP: 0,
-       WrMeHead: "Wrong Answer!",
-       WrMeSub: "The correct answer was " + answer +".",
-
-      })
-  };
-
-  subProblem = () => {
-    let A = Math.floor(Math.random()*(10));
-    let B = Math.floor(Math.random()*(10));
-    let C;
-    if (B > A) {
-      C = A;
-      A = B;
-      B = C;
-    }
-    let answer = A - B;
-    let heal = 4 + Math.floor(Math.random() * 3);
-    return ({problemDisplay:`${A} - ${B}`,
-    answer: answer,
-    CoMeHP: +(heal),
-    CoMonHP: 0,
-    CoMeHead: "Correct Answer!",
-    CoMeSub: "You healed " + (heal) + " points!",
-
-    WrMeHP: 0,
-    WrMonHP: 0,
-    WrMeHead: "Wrong Answer!",
-    WrMeSub: "The correct answer was " + answer +".",})
-  };
-
   render () {
     return (
-
+     <div>
+      
       <div
         style={this.props.visible}
       >
         <div id="battle_cover"
           style={this.state.seeBattle_cover}
         >
-          <button
+          <button id="battleReady"
             onClick={this.handleBattleReady}
-          >Ready for Battle?</button>
+          ></button>
         </div>
         <div id="battle_view"
           style={this.state.seeBattle_view}
@@ -213,6 +167,7 @@ class Battle_Wrapper extends Component {
           />
         </div>
       </div>
+    </div>
     );
   }
 }

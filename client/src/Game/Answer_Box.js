@@ -1,12 +1,20 @@
 import React, { Component } from "react";
+import Attacks from "./Attacks.js"
 
 class Answer_Box extends Component {
 
   render() {
     return (
       <div>
-        <form style={this.props.state.seeProblemBox}>
-          <h3>{this.props.state.problem.problemDisplay}</h3>
+        <form
+          id="answer-form"
+          style={this.props.state.seeProblemBox}>
+          <button
+            id="submitAnswer"
+            onClick={this.props.submit}
+            >
+            {this.props.state.problem.problemDisplay}
+          </button>
           <input
             type="input"
             name="userAnswer"
@@ -14,19 +22,18 @@ class Answer_Box extends Component {
             value={this.props.state.userAnswer}
           />
           <br/>
-          <button onClick={this.props.submit}>Submit Answer</button>
         </form>
         <div style={this.props.state.seeAttackBtns}>
-          <button id="add"
-            onClick={this.props.attack}
-            >Addition Attack!
-          </button>
-          <button id="subtract"
-            onClick={this.props.attack}
-            >Subtraction Heal!
-          </button>
+          {Attacks.abilities.filter((ability) => ability.level <= this.props.state.me.level).map((ability, index) => (
+            <button
+              id={index}
+              onClick={this.props.attack}
+            >
+            {ability.name}</button>
+          ))}
         </div>
         <div
+          id="results"
           onClick={this.props.handleResult}
           className="result-box"
           style={this.props.state.seeResultBox}

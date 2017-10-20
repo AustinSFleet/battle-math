@@ -9,7 +9,21 @@ import './App.css';
 
 class App extends Component {
   state = {
-    me: {me: 6},
+    me: {
+<<<<<<< HEAD
+      name: "JIMMY",
+=======
+      name: "Redman",
+>>>>>>> test
+      level: 1,
+      experience: 0,
+      abilities: [],
+      items: [],
+      maxHP: 20,
+      img:"/images/Finn.png",
+      HP: 12,
+      maxHP: 12
+    },
     userName: "",
     password: "",
     setUserName: "",
@@ -18,6 +32,12 @@ class App extends Component {
     page1: {display:"block"},
     page2: {display:"none"}
   };
+
+  updateMe = (upMe) => {
+    this.setState({
+      me: upMe
+    })
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -89,17 +109,18 @@ class App extends Component {
 
           />
           <Route exact path="/"
-            render={() => Object.keys(this.state.me).length ?
-              <Main character={this.state.me} /> :
-              <Login
-              handleInputChange={this.handleInputChange}
-              loginSubmit={this.loginSubmit}
-              userName={this.state.userName}
-              password={this.state.password}
+            render={() => Object.keys(this.state.me).length
+              ? <Main
+                character={this.state.me}
+                updateMe={this.updateMe} />
+              : <Login
+                handleInputChange={this.handleInputChange}
+                loginSubmit={this.loginSubmit}
+                userName={this.state.userName}
+                password={this.state.password}
             />
             }
           />
-          <Route component={NoMatch} />
         </Switch>
       </div>
     </Router>
