@@ -18,10 +18,8 @@ class Main extends Component {
       HP: 70,
       maxHP: 10
     }
-    
-  }
 
-  
+  }
 
   handleMonsterClick = (event) => {
     let monsterPick = Monsters.monsters[event.target.value]
@@ -45,7 +43,7 @@ class Main extends Component {
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
     })
-    
+
     this.props.updateMe(upMe);
   }
 
@@ -54,11 +52,11 @@ class Main extends Component {
   render() {
     return (
       <div className="App">
-        
+
         <StatusBar
           name={this.props.me.name}
           level={this.props.me.level}
-          
+
         />
 
         <Battle_Wrapper
