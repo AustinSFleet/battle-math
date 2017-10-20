@@ -8,7 +8,7 @@ form{
   border: 2px outset #CCC;
 }
 
-h1{
+.loginH1{
   font-size: 70px;
   border-bottom: 2px inset #BBB;
   display:inline;
@@ -25,16 +25,16 @@ a{
   border-bottom: 2px inset #BBB;
 }
 
-p{
+.loginP{
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-input{
+.loginInput{
   font-size: 45px;
 }
 
-button{
+.loginButton{
   padding: 0 20px;
   height: 50px;
   font-size: 25px;

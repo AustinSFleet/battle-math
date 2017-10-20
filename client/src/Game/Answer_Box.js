@@ -26,6 +26,7 @@ class Answer_Box extends Component {
         <div style={this.props.state.seeAttackBtns}>
           {Attacks.abilities.filter((ability) => ability.level <= this.props.me.level).map((ability, index) => (
             <button
+              className="attackBtn"
               id={index}
               onClick={this.props.attack}
             >

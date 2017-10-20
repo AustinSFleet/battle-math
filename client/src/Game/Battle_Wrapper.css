@@ -157,9 +157,12 @@ body {
   right: 190px;
   display: none;
 }
-#statName, #statLevel {
+.labelText{
 font-size: 25px;
+text-shadow: 1px 1px white;
+align-content: left;
 }
+
 
 .page-header {
 
@@ -168,6 +171,12 @@ font-size: 25px;
     text-shadow: 1px 1px white;
     align-content: left;
     
+}
+
+#battle-box {
+    width: 400px;
+    height: 400px;
+    margin-top: 7%;
 }
 
 
