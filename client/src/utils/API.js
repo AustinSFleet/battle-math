@@ -14,12 +14,6 @@ export default {
 
   newUser: function(newUserData) {
     return axios.post("/api/newUser", newUserData)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
   },
 
   update: function(updateData) {
