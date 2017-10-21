@@ -51,17 +51,19 @@ class App extends Component {
     }
 
     API.login(loginData).then((response) => {
-       const character = {
-         name: response.name,
-         img: response.img,
-         level: response.level,
-         experience: response.experience,
-         coins: 0,
-         HP: response.HP
-       }
-       this.setState({
-         me: character
-       })
+      const character = {
+        name: response.data.name,
+        img: response.data.img,
+        level: response.data.level,
+        experience: response.data.experience,
+        coins: response.data.coins,
+        HP: response.data.HP
+      }
+      this.setState({
+        me: character
+      }).catch(function (error) {
+        console.log(error);
+     });
     })
   }
 

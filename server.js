@@ -96,8 +96,33 @@ app.get("/", function(req, res) {
   });
 
 app.post("/api/login", passport.authenticate("local"),  (req, res) => {
-  res.json(req.user);
+  console.log("recieved")
+  console.log(res)
+  res.send(res);
 });
+
+// app.post("/api/login", function(req,res){
+//   db.user_Info.findAll({
+//     where : {userName : req.body.userName}
+//     }).then(function(outData){
+//       console.log(outData[0].dataValues)
+//         if (req.body.password === outData[0].dataValues.password){
+//           console.log(outData.dataValues);
+//           const userObject = {
+//             name: outData.dataValues.userName,
+//             level: outData.dataValues.level,
+//             experience: outData.dataValues.experience,
+//             HP: outData.dataValues.HP,
+//             coins: outData.dataValues.coins,
+//             img: outData.dataValues.image
+//           };
+//           res.send(userObject);
+//         }
+//         else{
+//           console.log("password not match")
+//         }
+//     });
+// });
 
 app.get('/main',IsAuthenticated, function(req , res){
   res.sendFile(path.join(__dirname, "client/build/index.html/"));
@@ -149,7 +174,7 @@ db.user_Info.findAll({
 
 
 
-  db.sequelize.sync({ force: true }).then(function() {
+  db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
