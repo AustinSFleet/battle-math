@@ -17,9 +17,12 @@ class Main extends Component {
       img:"",
       HP: 70,
       maxHP: 10
+    
     }
-
+    
   }
+ 
+ 
 
   handleMonsterClick = (event) => {
     let monsterPick = Monsters.monsters[event.target.value]
@@ -34,6 +37,7 @@ class Main extends Component {
     let upMe = {...this.props.me};
 
     upMe.experience += monster.experience;
+    upMe.coins += monster.monCoins;
     upMe.level = Math.floor(upMe.experience / 60) + 1
     if (upMe.level > this.props.me.level){
       upMe.maxHP += 8;
@@ -42,6 +46,7 @@ class Main extends Component {
     this.setState({
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
+      
     })
 
     this.props.updateMe(upMe);
@@ -56,6 +61,7 @@ class Main extends Component {
         <StatusBar
           name={this.props.me.name}
           level={this.props.me.level}
+          coins={this.props.me.coins}
 
         />
 
