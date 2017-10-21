@@ -18,7 +18,8 @@ class App extends Component {
       maxHP: 20,
       img:"/images/Finn.png",
       HP: 12,
-      maxHP: 12
+      maxHP: 12,
+      coins:0
     },
     newCharSuccess: false,
     userName: "",

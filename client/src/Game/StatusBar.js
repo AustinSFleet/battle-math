@@ -8,13 +8,14 @@ class StatusBar extends Component {
 
 render () {
    return ( 
-   <div class= "page-header" align="left">
+   <div className= "page-header" align="left">
         
-       <span class="labelText"> Name: </span> 
+       <span className="labelText"> Name: </span> 
        {this.props.name} {" "}
-       <span class="labelText"> Level: </span>
+       <span className="labelText"> Level: </span>
        {this.props.level}
-       <span class="labelText"> Coins: </span>
+       <span className="labelText"> Coins: </span>
+       {this.props.coins}
         
     </div>
    )}

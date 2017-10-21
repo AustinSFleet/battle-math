@@ -16,7 +16,8 @@ class Battle_Wrapper extends Component {
     seeCounterAttack: {display: "none"},
     actionHeading: "",
     actionSubHead: "",
-    monster: this.props.monster
+    monster: this.props.monster,
+    monCoins: this.props.monster.monCoins
   };
 
   handleBattleReady = (event) => {
