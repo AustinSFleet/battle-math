@@ -19,12 +19,17 @@ module.exports = function(sequelize, DataTypes){
         level : {
             type : DataTypes.INTEGER,
             allowNull : false,
-            defaultValue : 0
+            defaultValue : 1
         },
         HP : {
           type: DataTypes.INTEGER,
           allowNull: false,
           defaultValue: 12
+        },
+        coins : {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          defaultValue: 0
         },
         image: {
           type: DataTypes.STRING,

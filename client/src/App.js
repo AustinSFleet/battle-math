@@ -20,6 +20,7 @@ class App extends Component {
       HP: 12,
       maxHP: 12
     },
+    newCharSuccess: false,
     userName: "",
     password: "",
     setUserName: "",
@@ -48,9 +49,21 @@ class App extends Component {
       userName: this.state.userName,
       password: this.state.password,
     }
-    console.log(loginData);
-    API.login(loginData).then(console.log)
-  };
+
+    API.login(loginData).then((response) => {
+       const character = {
+         name: response.name,
+         img: response.img,
+         level: response.level,
+         experience: response.experience,
+         coins: 0,
+         HP: response.HP
+       }
+       this.setState({
+         me: character
+       })
+    })
+  }
 
   pageChange = (event) => {
     event.preventDefault();
@@ -68,14 +81,29 @@ class App extends Component {
       })
     }
   }
+
   createCharacter = (event) => {
     const newUserData = {
         setUserName: this.state.setUserName,
         setPassword: this.state.setPassword,
         img: event.target.alt
-      }
-    console.log(event.target.alt)
-    console.log(newUserData);
+    }
+    API.newUser(newUserData).then((response) => {
+       const character = {
+         name: response.data.name,
+         img: response.data.img,
+         level: response.data.level,
+         experience: response.data.experience,
+         coins: response.data.coins,
+         HP: response.data.HP
+       }
+       this.setState({
+         me: character,
+         newCharSuccess: true
+       }).catch(function (error) {
+         console.log(error);
+      });
+    });
   }
 
   render() {
@@ -85,23 +113,31 @@ class App extends Component {
         <Switch>
           <Route exact path="/login"
             render={() => (<Login
-            handleInputChange={this.handleInputChange}
-            loginSubmit={this.loginSubmit}
-            userName={this.state.userName}
-            password={this.state.password}
-          />)}/>
+              handleInputChange={this.handleInputChange}
+              loginSubmit={this.loginSubmit}
+              userName={this.state.userName}
+              password={this.state.password}
+            />)
+            }
+          />
 
           <Route exact path="/new_character"
-            render={() => (<Create
-            page1={this.state.page1}
-            page2={this.state.page2}
-            pageChange={this.pageChange}
-            handleInputChange={this.handleInputChange}
-            setUserName={this.state.setUserName}
-            setPassword={this.state.setPassword}
-            confirmPassword={this.state.confirmPassword}
-            createCharacter={this.createCharacter}
-          />)}/>
+            render={() => this.state.newCharSuccess
+              ? <Main
+                  me={this.state.me}
+                  updateMe={this.updateMe} />
+              : <Create
+                  page1={this.state.page1}
+                  page2={this.state.page2}
+                  pageChange={this.pageChange}
+                  handleInputChange={this.handleInputChange}
+                  setUserName={this.state.setUserName}
+                  setPassword={this.state.setPassword}
+                  confirmPassword={this.state.confirmPassword}
+                  createCharacter={this.createCharacter}
+                />
+              }
+            />
 
           />
           <Route exact path="/"
