@@ -42,37 +42,28 @@ db.user_Info.findAll({
   where : {userName : username}
 }).then(function(data){
 
-  // console.log("OH NO ROBOTS");
-  // console.log(data[0].dataValues.password);
-  // console.log(bCrypt.hashSync(password));
-  // console.log("THEY'RE EVERYWHERE");
-  var hash = data[0].dataValues.password;
+  console.log(data);
+  var hash;
 
-if(data[0].dataValues.userName === username && bCrypt.compareSync(password, hash)  ){
-  return  cb(null, {userName : username, password: password, "HP":data[0].dataValues.HP, "experiance":data[0].dataValues.experiance, "level":data[0].dataValues.level, "image":data[0].dataValues.image});
-    console.log("it works just fine!!");
+if (data.length !== 0){
+  hash = data[0].dataValues.password;
+  if(data[0].dataValues.userName === username && bCrypt.compareSync(password, hash)  ){
+   return  cb(null, {userName : username, password: password, "HP":data[0].dataValues.HP, "experience":data[0].dataValues.experiance, "level":data[0].dataValues.level, "image":data[0].dataValues.image, "coins": data[0].dataValues.coins});
+    // console.log("it works just fine!!");
 
+  }
 }
-else  {
 
-  console.log("user dose not exits!!! Please create a new user!!!");
-  return cb(new Error(401));
+else if (data.length === 0 || bCrypt.compareSync(password, hash))  {
+  return cb(null ,{"error" : "error"});
 }
 
 });
 
 
-// if(username == password){
-//     return  cb(null, {userName : username, password: password});
-//   }
-//   else {
-//       return cb(new Error(401));
-//   }
 }
 ));
-//This is for local Authentication
 
-//This is to serialize User and deserialize user
 passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
@@ -96,36 +87,10 @@ app.get("/", function(req, res) {
   });
 
 app.post("/api/login", passport.authenticate("local"),  (req, res) => {
-  console.log("recieved")
-  console.log(res)
-  res.send(res);
-});
-
-// app.post("/api/login", function(req,res){
-//   db.user_Info.findAll({
-//     where : {userName : req.body.userName}
-//     }).then(function(outData){
-//       console.log(outData[0].dataValues)
-//         if (req.body.password === outData[0].dataValues.password){
-//           console.log(outData.dataValues);
-//           const userObject = {
-//             name: outData.dataValues.userName,
-//             level: outData.dataValues.level,
-//             experience: outData.dataValues.experience,
-//             HP: outData.dataValues.HP,
-//             coins: outData.dataValues.coins,
-//             img: outData.dataValues.image
-//           };
-//           res.send(userObject);
-//         }
-//         else{
-//           console.log("password not match")
-//         }
-//     });
-// });
-
-app.get('/main',IsAuthenticated, function(req , res){
-  res.sendFile(path.join(__dirname, "client/build/index.html/"));
+  // console.log("recieved")
+  // console.log(res);
+  // console.log(req);
+  res.send(req.user);
 });
 
 
@@ -158,20 +123,8 @@ db.user_Info.findAll({
     }
 });
 
-// db.user_Info.create({
-//   userName : req.body.setUserName,
-//   password : bCrypt.hashSync(req.body.setPassword),
-//   image    : req.body.img
 
-// }).then(function(outData){
-//   console.log("it works");
-// });
-  console.log(req.body);
 });
-
-//API Routs
-
-
 
 
   db.sequelize.sync({ force: false }).then(function() {

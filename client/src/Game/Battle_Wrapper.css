@@ -15,7 +15,7 @@ body {
     height: 150px;
     width: 150px;
     border: none;
-   
+
 }
 
 #teenager {
@@ -30,7 +30,7 @@ body {
     width: 200px;
     border: none;
     position: fixed;
-    
+
 }
 
 #bob {
@@ -45,8 +45,8 @@ body {
    margin-left: -5%;
    margin-top: 0%;
    position:fixed;
-   
-   
+
+
 }
 
 #Marshall {
@@ -93,7 +93,7 @@ body {
     text-shadow: 2px 2px #ffffff;
     margin-top: 15%;
     margin-left: -10%;
-    
+
 }
 
 #battle-box{
@@ -159,11 +159,18 @@ body {
   margin-bottom: 15px;
 }
 
-#fireworks{
+#myAnimation{
+  position: relative;
+  left: 190px;
+  display: none;
+}
+
+#enemyAnimation{
   position: relative;
   right: 190px;
   display: none;
 }
+
 .labelText{
 font-size: 25px;
 text-shadow: 1px 1px white;
@@ -177,7 +184,7 @@ align-content: left;
     font-size: 40px;
     text-shadow: 1px 1px white;
     align-content: left;
-    
+
 }
 
 #battle-box {
@@ -214,7 +221,7 @@ align-content: left;
     width:250px;
     background: transparent !important;
     margin-top:100px;
-    
+
 }
 
 #submitAnswer {
@@ -230,7 +237,7 @@ align-content: left;
     /* text-shadow: 2px 2px black; */
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgba(252, 252, 252, 0.521);
-    
+
 }
 
 .userAnswerbox{
@@ -238,4 +245,3 @@ align-content: left;
  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  font-size: 20px;
 }
-
