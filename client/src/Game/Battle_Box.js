@@ -16,13 +16,20 @@ class Battle_Box extends Component {
     <div id="battle-box" className="inline">
       <div id="battle-me" className="inline">
         <img src={this.props.me.img}/>
+        <img
+          id="myAnimation"
+          src={this.props.myAnimation}
+        />
         <h2 className="battler">{this.props.me.name}</h2>
         <p className="healthbar">{this.healthBar(this.props.me.HP)}</p>
       </div>
       <h5 id="vs" className="inline">VS</h5>
       <div id="battle-monster" className="inline">
         <img src={this.props.state.monster.img}/>
-          <img id="fireworks" src={"images/fireworksanimated.gif"}/>
+        <img
+          id="enemyAnimation"
+          src={this.props.enemyAnimation}
+        />
         <h2 className="battler">{this.props.state.monster.name}</h2>
         <p className="healthbar">{this.healthBar(this.props.state.monster.HP)}</p>
       </div>
