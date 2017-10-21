@@ -15,17 +15,17 @@ monsters: [{
   attack: ()=> {
     return(2 + Math.floor(2 * Math.random()))},
   img:"/images/Tiffany.png",
-  HP: 12,
+  HP: 4,
   maxHP: 12
 },
 {
-  name: "Creepy Vampire",
-  experience: 10,
+  name: "Marshall",
+  experience: 30,
   attack: ()=> {
     return(2 + Math.floor(2 * Math.random()))},
   img:"/images/Marshall_Lee.png",
-  HP: 30,
-  maxHP: 30
+  HP: 4,
+  maxHP: 12
 },
 {
   name: "Bob",
@@ -33,7 +33,17 @@ monsters: [{
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
   img:"/images/Gnome_ruler.png",
-  HP: 30,
+  HP: 4,
   maxHP: 30
-}]
+},
+{
+  name: "Greg",
+  experience: 30,
+  attack: ()=> {
+    return(1 + Math.floor(1 * Math.random()))},
+  img:"/images/greg.png",
+  HP: 4,
+  maxHP: 30
+}
+]
 }

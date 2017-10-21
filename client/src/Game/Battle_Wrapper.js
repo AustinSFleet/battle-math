@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
+import Attacks from "./Attacks.js"
 import "./Battle_Wrapper.css";
 
 class Battle_Wrapper extends Component {
@@ -15,7 +16,6 @@ class Battle_Wrapper extends Component {
     seeCounterAttack: {display: "none"},
     actionHeading: "",
     actionSubHead: "",
-    me: this.props.me,
     monster: this.props.monster
   };
 
@@ -28,25 +28,16 @@ class Battle_Wrapper extends Component {
     })
   };
 
-  handleAttack = (event) => {
-    if (event.target.id === "add"){
-    let newProblem = this.addProblem();
-    this.setState({
-      problem: newProblem,
-      seeAttackBtns: {display : "none" },
-      seeProblemBox: {display : "block"}
-    });
-  }
-  else if (event.target.id === "subtract") {
-    let newProblem = this.subProblem();
-    this.setState({
-      problem: newProblem,
-      seeAttackBtns: {display : "none" },
-      seeProblemBox: {display : "block"}
-    });
-  }
-};
 
+  handleAttack = (event) => {
+    console.log(event.target.id)
+    const newProblem = Attacks.abilities[event.target.id].problem();
+    this.setState({
+      problem: newProblem,
+      seeAttackBtns: {display : "none" },
+      seeProblemBox: {display : "block"}
+    });
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -59,7 +50,7 @@ class Battle_Wrapper extends Component {
     //this happens when you submit an answer
     event.preventDefault();
     let upMonster = {...this.state.monster};
-    let upMe = {...this.state.me};
+    let upMe = {...this.props.me};
     this.setState({
       seeResultBox: {display: "block"},
       seeProblemBox: {display: "none"}
@@ -68,23 +59,25 @@ class Battle_Wrapper extends Component {
       // let upMonster = {...this.state.monster};
       upMonster.HP += this.state.problem.CoMonHP;
       upMe.HP += this.state.problem.CoMeHP;
+      this.props.updateMe(upMe);
       this.setState({
         userAnswer: "",
         actionHeading: this.state.problem.CoMeHead,
         actionSubHead: this.state.problem.CoMeSub,
         monster: upMonster,
-        me: upMe
+       
       });
     }
     else {
       upMonster.HP += this.state.problem.WrMonHP;
       upMe.HP += this.state.problem.WrMeHP;
+      this.props.updateMe(upMe);
       this.setState({
         userAnswer: "",
         actionHeading: this.state.problem.WrMeHead,
         actionSubHead: this.state.problem.WrMeSub,
         monster: upMonster,
-        me: upMe
+        
       });
     }
   };
@@ -96,21 +89,22 @@ class Battle_Wrapper extends Component {
     }
     else{
       //counter attack
-      let upMe = {...this.state.me};
+      let upMe = {...this.props.me};
       let damageTaken = this.state.monster.attack();
       upMe.HP -= damageTaken;
+      this.props.updateMe(upMe);
       this.setState({
         seeResultBox: {display: "none"},
         seeCounterAttack: {display: "block"},
         actionHeading: `${this.state.monster.name} fights back!`,
         actionSubHead: `You lost ${damageTaken} life!`,
-        me: upMe
+        
       });
     }
   };
 
   handleCounter = event => {
-    if (this.state.me.HP <= 0){
+    if (this.props.me.HP <= 0){
       this.iDied();
     }
     else{
@@ -137,63 +131,19 @@ class Battle_Wrapper extends Component {
     alert("Don't you understand you dead?");
   };
 
-  addProblem = () => {
-     let A = Math.floor(Math.random()*(10));
-     let B = Math.floor(Math.random()*(10));
-     let answer = A + B;
-     let damage = 4 + Math.floor(Math.random() * 3);
-     return ({
-       problemDisplay:`${A} + ${B}`,
-       answer: answer,
-       CoMeHP: 0,
-       CoMonHP: -(damage),
-       CoMeHead: "Correct Answer!",
-       CoMeSub: `You did ${damage} damage!`,
-
-       WrMeHP: 0,
-       WrMonHP: 0,
-       WrMeHead: "Wrong Answer!",
-       WrMeSub: "The correct answer was " + answer +".",
-
-      })
-  };
-
-  subProblem = () => {
-    let A = Math.floor(Math.random()*(10));
-    let B = Math.floor(Math.random()*(10));
-    let C;
-    if (B > A) {
-      C = A;
-      A = B;
-      B = C;
-    }
-    let answer = A - B;
-    let heal = 4 + Math.floor(Math.random() * 3);
-    return ({problemDisplay:`${A} - ${B}`,
-    answer: answer,
-    CoMeHP: +(heal),
-    CoMonHP: 0,
-    CoMeHead: "Correct Answer!",
-    CoMeSub: "You healed " + (heal) + " points!",
-
-    WrMeHP: 0,
-    WrMonHP: 0,
-    WrMeHead: "Wrong Answer!",
-    WrMeSub: "The correct answer was " + answer +".",})
-  };
-
   render () {
     return (
-
+     <div>
+      
       <div
         style={this.props.visible}
       >
         <div id="battle_cover"
           style={this.state.seeBattle_cover}
         >
-          <button
+          <button id="battleReady"
             onClick={this.handleBattleReady}
-          >Ready for Battle?</button>
+          ></button>
         </div>
         <div id="battle_view"
           style={this.state.seeBattle_view}
@@ -202,6 +152,7 @@ class Battle_Wrapper extends Component {
             attack={this.handleAttack}
             state={this.state}
             display={this.state.seeResultBox}
+            me={this.props.me}
           />
           <Answer_Box
             onChange={this.handleInputChange}
@@ -210,9 +161,11 @@ class Battle_Wrapper extends Component {
             attack={this.handleAttack}
             handleResult={this.handleResult}
             handleCounter={this.handleCounter}
+            me={this.props.me}
           />
         </div>
       </div>
+    </div>
     );
   }
 }

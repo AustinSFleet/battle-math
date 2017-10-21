@@ -5,40 +5,95 @@ body {
 }
 
 #trump {
-    background: transparent url("./../Assets/photos/trump5icon.png");
+    background: transparent url("./../Assets/photos/trumpicon3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-left: -425px;
-    margin-top:250px;
+    margin-left: -35%;
+    margin-top:17.5%;
     /* put the height and width of your image here */
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     border: none;
+   
 }
 
 #teenager {
-    background: transparent url("./../Assets/photos/TiffanyIcon.png");
+    background: transparent url("./../Assets/photos/Tiffany3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-top:250px;
-    margin-right: -100px;
+    margin-top:12%;
+    margin-right: 50%;
     /* put the height and width of your image here */
     height: 200px;
     width: 200px;
     border: none;
+    position: fixed;
+    
 }
 
 #bob {
-    background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
+    background: transparent url("./../Assets/photos/BOBicon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     /* put the height and width of your image here */
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     border: none;
+   margin-left: -5%;
+   margin-top: 0%;
+   position:fixed;
+   
+   
+}
+
+#Marshall {
+    background: transparent url("./../Assets/photos/Marshall_Lee.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: 15%;
+   margin-top: 25%;
+   position:fixed;
+}
+
+#greg {
+    background: transparent url("./../Assets/photos/gregIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: -20%;
+   margin-top: 25%;
+   position:fixed;
+}
+
+
+#battleReady {
+    background: transparent url("./../Assets/photos/battle2.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 275px;
+    width: 275px;
+    border: none;
+    font: Impact, fantasy;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px #ffffff;
+    margin-top: 15%;
+    margin-left: -10%;
+    
 }
 
 #battle-box{
@@ -57,11 +112,18 @@ body {
 #results{
     position: relative;
     bottom: 95px;
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-
-    text-shadow: 2px 2px white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    /* outline: 5px white; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    color: rgb(85, 134, 248);
+    /* text-shadow: 2px 2px black; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
 #vs{
@@ -102,3 +164,78 @@ body {
   right: 190px;
   display: none;
 }
+.labelText{
+font-size: 25px;
+text-shadow: 1px 1px white;
+align-content: left;
+}
+
+
+.page-header {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    text-shadow: 1px 1px white;
+    align-content: left;
+    
+}
+
+#battle-box {
+    width: 500px;
+    height: 400px;
+    margin-top: 5%;
+}
+
+.attackBtn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    /* outline: 5px white; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    color: rgb(85, 134, 248);
+    /* text-shadow: 2px 2px black; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.attackBtn:hover {
+    color:yellow;
+}
+
+#answer-form {
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    width:250px;
+    background: transparent !important;
+    margin-top:100px;
+    
+}
+
+#submitAnswer {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    /* outline: 5px white; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    /* text-shadow: 2px 2px black; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(252, 252, 252, 0.521);
+    
+}
+
+.userAnswerbox{
+ height: 30px;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ font-size: 20px;
+}
+

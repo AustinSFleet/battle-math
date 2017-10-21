@@ -15,9 +15,9 @@ class Battle_Box extends Component {
 
     <div id="battle-box" className="inline">
       <div id="battle-me" className="inline">
-        <img src={this.props.state.me.img}/>
-        <h2 className="battler">{this.props.state.me.name}</h2>
-        <p className="healthbar">{this.healthBar(this.props.state.me.HP)}</p>
+        <img src={this.props.me.img}/>
+        <h2 className="battler">{this.props.me.name}</h2>
+        <p className="healthbar">{this.healthBar(this.props.me.HP)}</p>
       </div>
       <h5 id="vs" className="inline">VS</h5>
       <div id="battle-monster" className="inline">

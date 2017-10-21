@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Attacks from "./Attacks.js"
 
 class Answer_Box extends Component {
 
@@ -10,9 +11,12 @@ class Answer_Box extends Component {
           style={this.props.state.seeProblemBox}>
           <button
             id="submitAnswer"
-            onClick={this.props.submit}>{this.props.state.problem.problemDisplay}
+            onClick={this.props.submit}
+            >
+            {this.props.state.problem.problemDisplay}
           </button>
           <input
+            className="userAnswerbox"
             type="input"
             name="userAnswer"
             onChange={this.props.onChange}
@@ -21,14 +25,14 @@ class Answer_Box extends Component {
           <br/>
         </form>
         <div style={this.props.state.seeAttackBtns}>
-          <button id="add"
-            onClick={this.props.attack}
-            >Addition Attack!
-          </button>
-          <button id="subtract"
-            onClick={this.props.attack}
-            >Subtraction Heal!
-          </button>
+          {Attacks.abilities.filter((ability) => ability.level <= this.props.me.level).map((ability, index) => (
+            <button
+              className="attackBtn"
+              id={index}
+              onClick={this.props.attack}
+            >
+            {ability.name}</button>
+          ))}
         </div>
         <div
           id="results"
