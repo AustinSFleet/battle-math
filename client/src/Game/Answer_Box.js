@@ -16,6 +16,7 @@ class Answer_Box extends Component {
             {this.props.state.problem.problemDisplay}
           </button>
           <input
+            className="userAnswerbox"
             type="input"
             name="userAnswer"
             onChange={this.props.onChange}
@@ -24,8 +25,9 @@ class Answer_Box extends Component {
           <br/>
         </form>
         <div style={this.props.state.seeAttackBtns}>
-          {Attacks.abilities.filter((ability) => ability.level <= this.props.state.me.level).map((ability, index) => (
+          {Attacks.abilities.filter((ability) => ability.level <= this.props.me.level).map((ability, index) => (
             <button
+              className="attackBtn"
               id={index}
               onClick={this.props.attack}
             >

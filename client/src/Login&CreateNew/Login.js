@@ -13,18 +13,20 @@ class Login extends Component {
     <div>
       <form>
         <div className="titleBox">
-          <h1>Login</h1>
+          <h1 id="loginH1">Login</h1>
           <Link to="/new_character" id="createLink">Create New Character</Link>
         </div>
-        <p>Name</p>
+        <p className="loginP">Name</p>
         <input
+          className="loginInput"
           type="text"
           onChange = {this.props.handleInputChange}
           name = "userName"
           value={this.props.userName}
         />
-        <p>Password</p>
+        <p className="loginP">Password</p>
         <input
+          className="loginInput"
           type = "password"
           name="password"
           onChange = {this.props.handleInputChange}
@@ -32,6 +34,7 @@ class Login extends Component {
         />
         <div>
           <button
+            className="loginButton"
             onClick = {this.props.loginSubmit}
           > Submit </button>
         </div>

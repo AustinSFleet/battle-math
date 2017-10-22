@@ -4,7 +4,9 @@ export default {
 
     {
       name: "Addition Attack",
-      level: 0,
+      level: 1,
+      myAnimation: "",
+      enemyAnimation: "/images/fireworksanimated.gif",
       problem: () => {
        let A = Math.floor(Math.random()*(10));
        let B = Math.floor(Math.random()*(10));
@@ -26,7 +28,7 @@ export default {
     },
     {
       name: "Subtraction Heal",
-      level: 1,
+      level: 2,
       problem: () => {
         let A = Math.floor(Math.random()*(10));
         let B = Math.floor(Math.random()*(10));
@@ -49,6 +51,29 @@ export default {
         WrMonHP: 0,
         WrMeHead: "Wrong Answer!",
         WrMeSub: "The correct answer was " + answer +".",})
+      }
+
+    },
+    {
+      name: "Critical Addition  Attack",
+      level: 3,
+      problem: () => {
+       let A = Math.floor(Math.random()*(100));
+       let B = Math.floor(Math.random()*(100));
+       let answer = A + B;
+       let damage = 10 + Math.floor(Math.random() * 10);
+       return ({
+         problemDisplay:`${A} + ${B}`,
+         answer: answer,
+         CoMeHP: 0,
+         CoMonHP: -(damage),
+         CoMeHead: "Correct Answer!",
+         CoMeSub: `You did ${damage} damage!`,
+
+         WrMeHP: 0,
+         WrMonHP: 0,
+         WrMeHead: "Wrong Answer!",
+         WrMeSub: "The correct answer was " + answer +".",})
       }
     }
     ]

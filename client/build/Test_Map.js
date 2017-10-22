@@ -24,6 +24,11 @@ class Test_Map extends Component {
           onClick={this.props.monsterClick}
           value="3"
         >Bob</button>
+        <button id="Creepy Vampire"
+          style={this.props.seeMonsterBtns}
+          onClick={this.props.monsterClick}
+          value="4"
+        ></button>
       </div>
     );
   }
