@@ -18,11 +18,28 @@ class Test_Map extends Component {
           onClick={this.props.monsterClick}
           value="1"
         ></button>
+        <button id="Marshall"
+          style={this.props.seeMonsterBtns}
+          onClick={this.props.monsterClick}
+          value="2"
+        ></button>
         <button id="bob"
           style={this.props.seeMonsterBtns}
           onClick={this.props.monsterClick}
           value="3"
         ></button>
+        <button id="greg"
+          style={this.props.seeMonsterBtns}
+          onClick={this.props.monsterClick}
+          value="4"
+        ></button>
+        <button id="ship"
+          style={this.props.seeMonsterBtns}
+          onClick={this.props.pirateClick}
+          value="5"
+        />
+        
+      
       </div>
     );
   }

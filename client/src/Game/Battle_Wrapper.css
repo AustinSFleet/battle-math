@@ -1,70 +1,139 @@
 body {
-<<<<<<< HEAD
+
     background-image: url("https://i.imgur.com/2El2Of7.jpg"); 
 }
 
 #trump {
     background: transparent url("./../Assets/photos/trumpdee.png");
-=======
+
     background-image: url("./../Assets/photos/map2.png");
     background-size: cover
 
 }
 
 #trump {
+
     background: transparent url("./../Assets/photos/trump5icon.png");
->>>>>>> test
+
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
     margin-left: -425px;
-<<<<<<< HEAD
-    margin-top:140px;
-    /* put the height and width of your image here */
-    height: 100px;
-    width: 100px;
-=======
     margin-top:250px;
     /* put the height and width of your image here */
     height: 250px;
     width: 250px;
->>>>>>> test
+
+    background: transparent url("./../Assets/photos/trumpicon3.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    margin-left: -35%;
+    margin-top:17.5%;
+    /* put the height and width of your image here */
+    height: 150px;
+    width: 150px;
+
     border: none;
+
 }
 
 #teenager {
-    background: transparent url("./../Assets/photos/TiffanyIcon.png");
+    background: transparent url("./../Assets/photos/Tiffany3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-top:250px;
-    margin-right: -100px;
+    margin-top:12%;
+    margin-right: 50%;
     /* put the height and width of your image here */
-<<<<<<< HEAD
-    height: 100px;
-    width: 100px;
-=======
     height: 200px;
     width: 200px;
->>>>>>> test
     border: none;
+    position: fixed;
+
 }
 
 #bob {
-    background: transparent url("./../Assets/photos/Gnome_rulerIcon.png");
+    background: transparent url("./../Assets/photos/BOBicon.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
-<<<<<<< HEAD
-=======
     position: absolute;
->>>>>>> test
     /* put the height and width of your image here */
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     border: none;
+   margin-left: -5%;
+   margin-top: 0%;
+   position:fixed;
+
+
+}
+
+#Marshall {
+    background: transparent url("./../Assets/photos/Marshall_Lee.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: 15%;
+   margin-top: 25%;
+   position:fixed;
+}
+
+#greg {
+    background: transparent url("./../Assets/photos/gregIcon.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 =======
+=======
+   margin-left: -20%;
+   margin-top: 25%;
+   position:fixed;
+}
+
+#ship {
+    background: transparent url("./../Assets/photos/pirates.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: 28%;
+   margin-top: 13%;
+   position:fixed;
+}
+
+
+#battleReady {
+    background: transparent url("./../Assets/photos/battle2.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 275px;
+    width: 275px;
+    border: none;
+    font: Impact, fantasy;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px #ffffff;
+    margin-top: 15%;
+    margin-left: -10%;
+
+>>>>>>> test
 }
 
 #battle-box{
@@ -83,11 +152,18 @@ body {
 #results{
     position: relative;
     bottom: 95px;
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-
-    text-shadow: 2px 2px white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    /* outline: 5px white; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    color: rgb(85, 134, 248);
+    /* text-shadow: 2px 2px black; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
 #vs{
@@ -123,9 +199,137 @@ body {
   margin-bottom: 15px;
 }
 
-#fireworks{
+#my-animation-box{
+  max-width: 225px;
+  position: absolute;
+  color: #7df442;
+  text-shadow: 2px 2px 3db402;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-size: 50px;
+  left: 35%;
+  bottom: 70px;
+  z-index: 2;
+}
+#myAnimation{
+  max-width: 220px;
+}
+#healNumber{
   position: relative;
-  right: 190px;
-  display: none;
+  bottom: 110px;
+}
+#enemyAnimation{
+  max-width: 250px;
+}
+#enemy-animation-box{
+  max-width: 250px;
+  position: absolute;
+  color: #f75127;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  text-shadow: 2px 2px b71100;
+  font-size: 50px;
+  right: 30%px;
+  bottom: 110px;
+  z-index: 2;
+}
+
+#damageNumber{
+  position: relative;
+  bottom: 110px;
+  right: 20%
+}
+
+.labelText{
+font-size: 25px;
+text-shadow: 1px 1px white;
+align-content: left;
+}
+
+
+.page-header {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    text-shadow: 1px 1px white;
+    align-content: left;
+
+}
+
+#battle-box {
+    width: 500px;
+    height: 400px;
+    margin-top: 4%;
+}
+
+.attackBtn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    /* outline: 5px white; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    color: rgb(85, 134, 248);
+    /* text-shadow: 2px 2px black; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.attackBtn:hover {
+    color:yellow;
+}
+
+#answer-form {
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    width:250px;
+    background: transparent !important;
+    margin-top:100px;
+
+}
+
+#submitAnswer {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    /* outline: 5px white; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    /* text-shadow: 2px 2px black; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(252, 252, 252, 0.521);
+
+}
+
+.userAnswerbox{
+ height: 30px;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  #my-animation-box{
+    left: 28%
+  }
+}
+
+@media screen and (max-width: 830px) {
+  #my-animation-box{
+    left: 20%
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #my-animation-box{
+    left: 15%
+  }
 }
 >>>>>>> test

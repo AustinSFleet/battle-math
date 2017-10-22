@@ -1,23 +1,20 @@
 {
-<<<<<<< HEAD
-  "name": "userAuthTest",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-=======
   "name": "battle-math",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "mysql2": "^1.4.2",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "sequelize": "^4.13.10"
   },
->>>>>>> 61392dded3fe82a5a116d5480dd0e3acd21ed88a
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -25,23 +22,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.6",
-    "mysql": "^2.15.0",
-    "mysql2": "^1.4.2",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-    "sequelize": "^4.13.10"
-=======
   "devDependencies": {
     "babel-preset-react": "^6.24.1"
->>>>>>> 61392dded3fe82a5a116d5480dd0e3acd21ed88a
   }
 }

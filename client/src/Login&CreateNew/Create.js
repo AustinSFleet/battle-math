@@ -7,39 +7,39 @@ class Create extends Component {
     images: [
       {
         name:"finn",
-        data:"/images/Finn.jpg",
+        data:"/images/Finn.png",
         alt:"Adventure Time Finn",
-        src:"images/small_Finn.png"
+        src:"images/smalls/small_Finn.png"
       },
       {
         name:"mario",
-        data:"/images/mario.jpg",
+        data:"/images/mario.png",
         alt:"super mario",
-        src:"images/small_mario.png"
+        src:"images/smalls/small_mario.png"
       },
       {
         name:"leonardo",
-        data:"/images/leonardo.jpg",
+        data:"/images/leonardo.png",
         alt:"ninja turtle leonardo",
-        src:"images/small_leonardo.png"
+        src:"images/smalls/small_leonardo.png"
       },
       {
         name:"gumball",
-        data:"/images/gumball.jpg",
+        data:"/images/gumballfight.png",
         alt:"gumball",
-        src:"images/small_gumball.png"
+        src:"images/smalls/small_gumball.png"
       },
       {
         name:"batman",
-        data:"/images/batman.jpg",
+        data:"/images/batman.png",
         alt:"lego batman",
-        src:"images/small_batman.png"
+        src:"images/smalls/small_batman.png"
       },
       {
         name:"spongebob",
-        data:"/images/spongebob.jpg",
+        data:"/images/spongebob.png",
         alt:"lego batman",
-        src:"images/small_spongebob.png"
+        src:"images/smalls/small_spongebob.png"
       }
     ]
   }

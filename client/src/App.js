@@ -10,17 +10,18 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-      name: "Zed",
-      level: 1,
-      experience: 0,
+      name: "Redman",
+      level: 5,
+      experience: 200,
       abilities: [],
       items: [],
       maxHP: 20,
-      img:"/images/leonardo.png",
+      img:"/images/batman.png",
       HP: 12,
-      maxHP: 12
+      maxHP: 12,
+      coins:0
     },
-
+    newCharSuccess: false,
     userName: "",
     password: "",
     setUserName: "",
@@ -30,6 +31,13 @@ class App extends Component {
     page2: {display:"none"}
 
   };
+
+  updateMe = (upMe) => {
+    this.setState({
+      me: upMe
+    })
+  }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -44,9 +52,34 @@ class App extends Component {
       userName: this.state.userName,
       password: this.state.password,
     }
-    console.log(loginData);
-    API.login(loginData).then(console.log);
-  };
+
+    API.login(loginData).then((response) => {
+      console.log("data:")
+      console.log(response.data)
+      if (response.data.error) {
+        console.log(response);
+        alert("Login/Password don't match!")
+      }
+      else{
+        console.log("making character....")
+        const character = {
+          name: response.data.userName,
+          img: response.data.image,
+          level: response.data.level,
+          experience: response.data.experience,
+          coins: response.data.coins,
+          HP: response.data.HP
+        }
+        this.setState({
+          me: character
+        });
+      }
+    }).catch(function (error) {
+        console.log(error);
+     });
+  }
+
+
 
   pageChange = (event) => {
     event.preventDefault();
@@ -64,14 +97,29 @@ class App extends Component {
       })
     }
   }
+
   createCharacter = (event) => {
     const newUserData = {
         setUserName: this.state.setUserName,
         setPassword: this.state.setPassword,
         img: event.target.alt
-      }
-    console.log(event.target.alt)
-    console.log(newUserData);
+    }
+    API.newUser(newUserData).then((response) => {
+       const character = {
+         name: response.data.name,
+         img: response.data.img,
+         level: response.data.level,
+         experience: response.data.experience,
+         coins: response.data.coins,
+         HP: response.data.HP
+       }
+       this.setState({
+         me: character,
+         newCharSuccess: true
+       }).catch(function (error) {
+         console.log(error);
+      });
+    });
   }
 
 
@@ -85,43 +133,46 @@ class App extends Component {
             component={Login}
 
             render={() => (<Login
-
-            handleInputChange={this.handleInputChange}
-            loginSubmit={this.loginSubmit}
-            userName={this.state.userName}
-            password={this.state.password}
-              />)}/>
-          />
-          <Route exact path="/" component={Main} character={this.state.me}/>
-          <Route exact path="/new_character" component={Create} />
-
-
-          <Route exact path="/new_character"
-            render={() => (<Create
-            page1={this.state.page1}
-            page2={this.state.page2}
-            pageChange={this.pageChange}
-            handleInputChange={this.handleInputChange}
-            setUserName={this.state.setUserName}
-            setPassword={this.state.setPassword}
-            confirmPassword={this.state.confirmPassword}
-            createCharacter={this.createCharacter}
-          />)}/>
-
-          />
-          <Route exact path="/"
-            render={() => Object.keys(this.state.me).length ?
-              <Main character={this.state.me} /> :
-              <Login
               handleInputChange={this.handleInputChange}
               loginSubmit={this.loginSubmit}
               userName={this.state.userName}
               password={this.state.password}
-            />
+            />)
             }
           />
 
-          <Route component={NoMatch} />
+          <Route exact path="/new_character"
+            render={() => this.state.newCharSuccess
+              ? <Main
+                  me={this.state.me}
+                  updateMe={this.updateMe} />
+              : <Create
+                  page1={this.state.page1}
+                  page2={this.state.page2}
+                  pageChange={this.pageChange}
+                  handleInputChange={this.handleInputChange}
+                  setUserName={this.state.setUserName}
+                  setPassword={this.state.setPassword}
+                  confirmPassword={this.state.confirmPassword}
+                  createCharacter={this.createCharacter}
+                />
+              }
+            />
+
+          />
+          <Route exact path="/"
+            render={() => Object.keys(this.state.me).length
+              ? <Main
+                me={this.state.me}
+                updateMe={this.updateMe} />
+              : <Login
+                handleInputChange={this.handleInputChange}
+                loginSubmit={this.loginSubmit}
+                userName={this.state.userName}
+                password={this.state.password}
+            />
+            }
+          />
         </Switch>
       </div>
     </Router>
