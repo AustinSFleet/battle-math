@@ -16,13 +16,11 @@ class Main extends Component {
       attack: ()=> 0,
       img:"",
       HP: 70,
-      maxHP: 10
-    
+      maxHP: 10  
     }
-    
   }
- 
- 
+
+
 
   handleMonsterClick = (event) => {
     let monsterPick = Monsters.monsters[event.target.value]
@@ -46,7 +44,7 @@ class Main extends Component {
     this.setState({
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
-      
+
     })
 
     this.props.updateMe(upMe);
