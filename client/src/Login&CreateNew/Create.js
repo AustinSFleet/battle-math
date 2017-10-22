@@ -38,9 +38,21 @@ class Create extends Component {
       {
         name:"spongebob",
         data:"/images/spongebob.png",
-        alt:"lego batman",
+        alt:"spongebob",
         src:"images/smalls/small_spongebob.png"
-      }
+      },
+      {
+        name:"son-goku",
+        data:"/images/son_goku.png",
+        alt:"son goku",
+        src:"images/smalls/small_goku.png"
+      },
+      {
+        name:"charmander",
+        data:"/images/charmander.png",
+        alt:"charmander",
+        src:"images/smalls/small_charmander.png"
+      },
     ]
   }
 
