@@ -10,16 +10,7 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-      name: "Redman",
-      level: 1,
-      experience: 0,
-      abilities: [],
-      items: [],
-      maxHP: 20,
-      img:"/images/Finn.png",
-      HP: 12,
-      maxHP: 12,
-      coins:0
+
     },
     newCharSuccess: false,
     userName: "",
@@ -52,21 +43,32 @@ class App extends Component {
     }
 
     API.login(loginData).then((response) => {
-      const character = {
-        name: response.data.name,
-        img: response.data.img,
-        level: response.data.level,
-        experience: response.data.experience,
-        coins: response.data.coins,
-        HP: response.data.HP
+      console.log("data:")
+      console.log(response.data)
+      if (response.data.error) {
+        console.log(response);
+        alert("Login/Password don't match!")
       }
-      this.setState({
-        me: character
-      }).catch(function (error) {
+      else{
+        console.log("making character....")
+        const character = {
+          name: response.data.userName,
+          img: response.data.image,
+          level: response.data.level,
+          experience: response.data.experience,
+          coins: response.data.coins,
+          HP: response.data.HP
+        }
+        this.setState({
+          me: character
+        });
+      }
+    }).catch(function (error) {
         console.log(error);
      });
-    })
   }
+
+
 
   pageChange = (event) => {
     event.preventDefault();

@@ -5,6 +5,8 @@ export default {
     {
       name: "Addition Attack",
       level: 1,
+      myAnimation: "",
+      enemyAnimation: "/images/fireworksanimated.gif",
       problem: () => {
        let A = Math.floor(Math.random()*(10));
        let B = Math.floor(Math.random()*(10));
@@ -50,7 +52,7 @@ export default {
         WrMeHead: "Wrong Answer!",
         WrMeSub: "The correct answer was " + answer +".",})
       }
-      
+
     },
     {
       name: "Critical Addition  Attack",
