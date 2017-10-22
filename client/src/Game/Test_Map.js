@@ -33,6 +33,11 @@ class Test_Map extends Component {
           onClick={this.props.monsterClick}
           value="4"
         ></button>
+        <button id="ship"
+          style={this.props.seeMonsterBtns}
+          
+          value="5"
+        />
         
       
       </div>
