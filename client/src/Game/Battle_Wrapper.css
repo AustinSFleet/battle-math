@@ -1,12 +1,5 @@
 body {
-
-    background-image: url("https://i.imgur.com/2El2Of7.jpg"); 
-}
-
-#trump {
-    background: transparent url("./../Assets/photos/trumpdee.png");
-
-    background-image: url("./../Assets/photos/map2.png");
+      background-image: url("./../Assets/photos/map2.png");
     background-size: cover
 
 }

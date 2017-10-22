@@ -85,6 +85,7 @@ class Main extends Component {
           level={this.props.me.level}
           coins={this.props.me.coins}
           me={this.props.me}
+          updateMe={this.props.updateMe}
 
         />
 

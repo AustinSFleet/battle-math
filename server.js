@@ -151,7 +151,8 @@ db.user_Info.findAll({
 });
 
 app.put("/api/save",(req,res) => {
-db.user_Info.update({experiance : req.body.experiance, level : req.body.level, HP : req.body.HP},{ where : {userName :req.body.userName}}).then(
+  console.log(req.body);
+db.user_Info.update({experience : req.body.experience, level : req.body.level, coins : req.body.coin ,HP : req.body.HP},{ where : {userName :req.body.name}}).then(
   function(){
     res.json(true);
     console.log('it worked!!!');
@@ -160,7 +161,7 @@ db.user_Info.update({experiance : req.body.experiance, level : req.body.level, H
 });
 
 
-  db.sequelize.sync({ force: false }).then(function() {
+  db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
