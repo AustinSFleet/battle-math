@@ -1,10 +1,22 @@
 body {
-    background-image: url("./../Assets/photos/map2.png");
+      background-image: url("./../Assets/photos/map2.png");
     background-size: cover
 
 }
 
 #trump {
+
+    background: transparent url("./../Assets/photos/trump5icon.png");
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    margin-left: -425px;
+    margin-top:250px;
+    /* put the height and width of your image here */
+    height: 250px;
+    width: 250px;
+
     background: transparent url("./../Assets/photos/trumpicon3.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -14,6 +26,7 @@ body {
     /* put the height and width of your image here */
     height: 150px;
     width: 150px;
+
     border: none;
 
 }
@@ -72,6 +85,7 @@ body {
     height: 200px;
     width: 200px;
     border: none;
+
    margin-left: -20%;
    margin-top: 25%;
    position:fixed;
@@ -107,6 +121,7 @@ body {
     text-shadow: 2px 2px #ffffff;
     margin-top: 15%;
     margin-left: -10%;
+
 
 }
 
@@ -318,3 +333,4 @@ margin-left: 10px;
     left: 15%
   }
 }
+

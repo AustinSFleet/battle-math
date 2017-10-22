@@ -29,6 +29,7 @@ class App extends Component {
     confirmPassword: "",
     page1: {display:"block"},
     page2: {display:"none"}
+
   };
 
   updateMe = (upMe) => {
@@ -121,12 +122,16 @@ class App extends Component {
     });
   }
 
+
   render() {
     return (
       <Router>
       <div>
         <Switch>
           <Route exact path="/login"
+
+            component={Login}
+
             render={() => (<Login
               handleInputChange={this.handleInputChange}
               loginSubmit={this.loginSubmit}
