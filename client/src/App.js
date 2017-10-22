@@ -10,16 +10,17 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-
-    },
-    newCharSuccess: false,
-    userName: "",
-    password: "",
-    setUserName: "",
-    setPassword: "",
-    confirmPassword: "",
-    page1: {display:"block"},
-    page2: {display:"none"}
+      name: "Redman",
+      level: 5,
+      experience: 200,
+      abilities: [],
+      items: [],
+      maxHP: 20,
+      img:"/images/Finn.png",
+      HP: 12,
+      maxHP: 12,
+      coins:0
+    }
   };
 
   updateMe = (upMe) => {

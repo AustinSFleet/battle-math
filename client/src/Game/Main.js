@@ -27,7 +27,7 @@ class Main extends Component {
   
  
   componentDidMount() {
-    const randomFare = Math.round(Math.floor(Math.random() * 100)/10)*10;
+    const randomFare = (Math.round(Math.floor(Math.random() * 100)/10)*10)+200;
     this.setState({Fare: randomFare });
     console.log(this.state.Fare);
     
@@ -40,6 +40,21 @@ class Main extends Component {
       seeBattle_Wrapper: {display: "block"},
       seeMonsterBtns: {display: "none"}
     });
+  }
+
+  handlePirateClick = (event) => {
+    let upMe = {...this.props.me};
+    if (this.props.me.coins === this.state.Fare){
+      alert("YOU GOT THE DOUGH! WELL THEN, LET'S GO!");
+      alert("CONGRATULATIONS ON USING YOUR EXCEPTIONAL BATTLE-MATH SKILLS TO ESCAPE THE ISLAND!")
+    } else if (this.props.me.coins < this.state.Fare){
+      alert(`Sorry matey, I know you really need to get off this island full of monsters, but I have like 4 families on 3 continents to feed. The cost for this ride is ${this.state.Fare} coins, come back when you have the exact amount. My Pantaloons have a hole from the last battle and I don't carry change.`);
+    } else if (this.props.me.coins > this.state.Fare){
+      alert(`You have way too many coins! I can't go into it now, but come back with EXACTLY ${this.state.Fare}... I don't want to tell you again so I'm taking all of your coins. I HOPE YOU LEARNED YOUR LESSON!`)
+      upMe.coins= 0
+      this.props.updateMe(upMe)
+    }
+    this.props.updateMe(upMe);
   }
 
   afterBattleUpdate = (monster) => {
@@ -86,6 +101,7 @@ class Main extends Component {
           monsterClick={this.handleMonsterClick}
           seeMonsterBtns={this.state.seeMonsterBtns}
           monsters={this.state.monsters}
+          pirateClick={this.handlePirateClick}
         />
       </div>
     );

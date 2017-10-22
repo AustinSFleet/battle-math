@@ -77,6 +77,20 @@ body {
    position:fixed;
 }
 
+#ship {
+    background: transparent url("./../Assets/photos/pirates.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: 28%;
+   margin-top: 13%;
+   position:fixed;
+}
+
 
 #battleReady {
     background: transparent url("./../Assets/photos/battle2.png");
