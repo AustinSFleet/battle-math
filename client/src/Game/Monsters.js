@@ -5,7 +5,7 @@ monsters: [{
   name: "Trump",
   experience: 30,
   attack: ()=> {
-    return(3 + Math.floor(2 * Math.random()))},
+    return(300 + Math.floor(2 * Math.random()))},
   img:"/images/trump5battle.png",
   HP: 10,
   maxHP: 10,

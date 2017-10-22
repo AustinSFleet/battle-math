@@ -3,6 +3,7 @@ import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
 import Attacks from "./Attacks.js"
 import "./Battle_Wrapper.css";
+import swal from 'sweetalert';
 
 class Battle_Wrapper extends Component {
   state = {
@@ -123,7 +124,7 @@ class Battle_Wrapper extends Component {
   };
 
   deadMonster = (monster) => {
-    alert(`You have defeated ${monster.name}!`);
+    swal(`Victory!`,`You have defeated ${monster.name}!`, "success");
     this.setState({
       seeCounterAttack: {display: "none"},
       seeResultBox: {display: "none"},
@@ -135,7 +136,9 @@ class Battle_Wrapper extends Component {
 
 
   iDied = () => {
-    alert("Don't you understand you dead?");
+    swal("Don't you understand you dead?","You'll have to start over kiddo!","error");
+    this.props.afterDeath();  
+    
   };
 
   render () {
