@@ -77,6 +77,20 @@ body {
    position:fixed;
 }
 
+#ship {
+    background: transparent url("./../Assets/photos/pirates.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    /* put the height and width of your image here */
+    height: 200px;
+    width: 200px;
+    border: none;
+   margin-left: 28%;
+   margin-top: 13%;
+   position:fixed;
+}
+
 
 #battleReady {
     background: transparent url("./../Assets/photos/battle2.png");
@@ -159,16 +173,45 @@ body {
   margin-bottom: 15px;
 }
 
+#my-animation-box{
+  max-width: 225px;
+  position: absolute;
+  color: #7df442;
+  text-shadow: 2px 2px 3db402;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-size: 50px;
+  left: 35%;
+  bottom: 70px;
+  z-index: 2;
+}
 #myAnimation{
+  max-width: 220px;
+}
+#healNumber{
   position: relative;
-  left: 190px;
-  display: none;
+  bottom: 110px;
+}
+#enemyAnimation{
+  max-width: 250px;
+}
+#enemy-animation-box{
+  max-width: 250px;
+  position: absolute;
+  color: #f75127;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  text-shadow: 2px 2px b71100;
+  font-size: 50px;
+  right: 30%px;
+  bottom: 110px;
+  z-index: 2;
 }
 
-#enemyAnimation{
+#damageNumber{
   position: relative;
-  right: 190px;
-  display: none;
+  bottom: 110px;
+  right: 20%
 }
 
 .labelText{
@@ -190,7 +233,7 @@ align-content: left;
 #battle-box {
     width: 500px;
     height: 400px;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 .attackBtn {
@@ -244,4 +287,22 @@ align-content: left;
  height: 30px;
  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  #my-animation-box{
+    left: 28%
+  }
+}
+
+@media screen and (max-width: 830px) {
+  #my-animation-box{
+    left: 20%
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #my-animation-box{
+    left: 15%
+  }
 }

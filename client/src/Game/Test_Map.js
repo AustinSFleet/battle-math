@@ -35,7 +35,7 @@ class Test_Map extends Component {
         ></button>
         <button id="ship"
           style={this.props.seeMonsterBtns}
-          
+          onClick={this.props.pirateClick}
           value="5"
         />
         

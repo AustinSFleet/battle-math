@@ -37,7 +37,7 @@ monsters: [{
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
   img:"/images/Gnome_ruler.png",
-  HP: 4,
+  HP: 40,
   maxHP: 30,
   monCoins:20
 },
@@ -56,7 +56,7 @@ monsters: [{
   experience: 30,
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
-  img:"/images/pirateship.png",
+  img:"/images/pirates.png",
   HP: 4,
   maxHP: 30,
   monCoins:50
