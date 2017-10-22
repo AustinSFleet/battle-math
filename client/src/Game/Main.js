@@ -4,6 +4,7 @@ import Test_Map from './Test_Map';
 import Monsters from './Monsters'
 import '../App.css';
 import StatusBar from "./StatusBar";
+import swal from 'sweetalert';
 
 
 class Main extends Component {
@@ -45,10 +46,10 @@ class Main extends Component {
   handlePirateClick = (event) => {
     let upMe = {...this.props.me};
     if (this.props.me.coins === this.state.Fare){
-      alert("YOU GOT THE DOUGH! WELL THEN, LET'S GO!");
-      alert("CONGRATULATIONS ON USING YOUR EXCEPTIONAL BATTLE-MATH SKILLS TO ESCAPE THE ISLAND!")
+      swal("YOU GOT THE DOUGH!", "WELL THEN, LET'S GO!", "success").then(
+      swal("CONGRATULATIONS!", "You used your exceptional Battle-Math skills to escape the monsters!", "success"))
     } else if (this.props.me.coins < this.state.Fare){
-      alert(`Sorry matey, I know you really need to get off this island full of monsters, but I have like 4 families on 3 continents to feed. The cost for this ride is ${this.state.Fare} coins, come back when you have the exact amount. My Pantaloons have a hole from the last battle and I don't carry change.`);
+      swal(`Sorry matey, I know you really need to get off this island full of monsters, but I have like 4 families on 3 continents to feed. The cost for this ride is ${this.state.Fare} coins, come back when you have the exact amount. My Pantaloons have a hole from the last battle and I don't carry change.`);
     } else if (this.props.me.coins > this.state.Fare){
       alert(`You have way too many coins! I can't go into it now, but come back with EXACTLY ${this.state.Fare}... I don't want to tell you again so I'm taking all of your coins. I HOPE YOU LEARNED YOUR LESSON!`)
       upMe.coins= 0
