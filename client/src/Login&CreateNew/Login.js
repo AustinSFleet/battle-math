@@ -32,18 +32,12 @@ class Login extends Component {
           onChange = {this.props.handleInputChange}
           value={this.props.password}
         />
-<<<<<<< HEAD
-        <button
-          onClick = {this.props.loginSubmit}
-        >Submit</button>
-=======
         <div>
           <button
             className="loginButton"
             onClick = {this.props.loginSubmit}
           > Submit </button>
         </div>
->>>>>>> test
       </form>
     </div>
     )
