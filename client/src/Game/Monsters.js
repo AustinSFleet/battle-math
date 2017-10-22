@@ -37,7 +37,7 @@ monsters: [{
   attack: ()=> {
     return(1 + Math.floor(1 * Math.random()))},
   img:"/images/Gnome_ruler.png",
-  HP: 4,
+  HP: 40,
   maxHP: 30,
   monCoins:20
 },

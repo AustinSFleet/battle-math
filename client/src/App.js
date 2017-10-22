@@ -16,11 +16,19 @@ class App extends Component {
       abilities: [],
       items: [],
       maxHP: 20,
-      img:"/images/Finn.png",
+      img:"/images/batman.png",
       HP: 12,
       maxHP: 12,
       coins:0
-    }
+    },
+    newCharSuccess: false,
+    userName: "",
+    password: "",
+    setUserName: "",
+    setPassword: "",
+    confirmPassword: "",
+    page1: {display:"block"},
+    page2: {display:"none"}
   };
 
   updateMe = (upMe) => {
@@ -28,6 +36,7 @@ class App extends Component {
       me: upMe
     })
   }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
