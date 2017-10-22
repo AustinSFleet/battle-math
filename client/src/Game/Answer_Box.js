@@ -41,15 +41,16 @@ class Answer_Box extends Component {
           style={this.props.state.seeResultBox}
         >
           <h2>{this.props.state.actionHeading}</h2>
-          <h4>{this.props.state.actionSubHead}</h4>
+          <h4 className="sub-head">{this.props.state.actionSubHead}</h4>
         </div>
         <div
+        id="counter-attack-results"
           onClick={this.props.handleCounter}
           className="result-box"
           style={this.props.state.seeCounterAttack}
         >
           <h2>{this.props.state.actionHeading}</h2>
-          <h4>{this.props.state.actionSubHead}</h4>
+          <h4 className="sub-head">{this.props.state.actionSubHead}</h4>
         </div>
       </div>
     )
