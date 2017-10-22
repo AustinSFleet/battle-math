@@ -12,11 +12,11 @@ class App extends Component {
     me: {
       name: "Redman",
       level: 5,
-      experience: 0,
+      experience: 200,
       abilities: [],
       items: [],
       maxHP: 20,
-      img:"/images/Finn.png",
+      img:"/images/batman.png",
       HP: 12,
       maxHP: 12,
       coins:0
@@ -36,6 +36,7 @@ class App extends Component {
       me: upMe
     })
   }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;

@@ -160,21 +160,23 @@ body {
 }
 
 #my-animation-box{
-  max-width: 215px;
+  max-width: 225px;
   position: absolute;
   color: #7df442;
   text-shadow: 2px 2px 3db402;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
   font-size: 50px;
-  left: 30%;
-  bottom: 50px;
+  left: 35%;
+  bottom: 70px;
   z-index: 2;
+}
+#myAnimation{
+  max-width: 220px;
 }
 #healNumber{
   position: relative;
   bottom: 110px;
-  left: 20%;
 }
 #enemyAnimation{
   max-width: 250px;
@@ -188,7 +190,7 @@ body {
   text-shadow: 2px 2px b71100;
   font-size: 50px;
   right: 30%px;
-  bottom: 50px;
+  bottom: 110px;
   z-index: 2;
 }
 
@@ -271,4 +273,22 @@ align-content: left;
  height: 30px;
  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  #my-animation-box{
+    left: 28%
+  }
+}
+
+@media screen and (max-width: 830px) {
+  #my-animation-box{
+    left: 20%
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #my-animation-box{
+    left: 15%
+  }
 }
