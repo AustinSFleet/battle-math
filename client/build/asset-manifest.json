@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "main.css": "static/css/main.19015343.css",
   "main.css.map": "static/css/main.19015343.css.map",
   "main.js": "static/js/main.e402a3d8.js",
   "main.js.map": "static/js/main.e402a3d8.js.map",
+=======
+  "main.css": "static/css/main.766bfcb8.css",
+  "main.css.map": "static/css/main.766bfcb8.css.map",
+  "main.js": "static/js/main.41e2b814.js",
+  "main.js.map": "static/js/main.41e2b814.js.map",
+>>>>>>> 55ac711881aa615e78205084115c470ff08a21f9
   "static\\media\\BOBicon.png": "static/media/BOBicon.74770a74.png",
   "static\\media\\Marshall_Lee.png": "static/media/Marshall_Lee.c4f67d68.png",
   "static\\media\\Tiffany3.png": "static/media/Tiffany3.84f4b156.png",

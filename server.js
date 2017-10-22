@@ -73,6 +73,12 @@ passport.deserializeUser(function(user, cb) {
   });
 //This is to serialize User and deserialize user
 
+var destroySession = function(req, res, next) {
+  req.logOut();
+  req.session.destroy()
+
+}
+
 //API Routs
 var IsAuthenticated = function(req, res, next){
   console.log(req);
@@ -86,10 +92,29 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "client/build/index.html"));
   });
 
+  
+passport.deserializeUser(function(user, cb) {
+   cb(null, user);
+    });
+//This is to serialize User and deserialize user
+ 
+  
+
+//initialize passport
+
+
+
+//getting Api & HTML routes
+require("./routes/api_routes.js")(app);
+require("./routes/html_routes.js")(app);
+//getting Api & HTML routes
+app.post("/api/login", function(req,res){
+  console.log(req.body);
+});
+app.get('/logout',destroySession);
+
 app.post("/api/login", passport.authenticate("local"),  (req, res) => {
-  // console.log("recieved")
-  // console.log(res);
-  // console.log(req);
+
   res.send(req.user);
 });
 
@@ -123,6 +148,15 @@ db.user_Info.findAll({
     }
 });
 
+
+});
+
+app.put("/api/save",(req,res) => {
+db.user_Info.update({experiance : req.body.experiance, level : req.body.level, HP : req.body.HP},{ where : {userName :req.body.userName}}).then(
+  function(){
+    res.json(true);
+    console.log('it worked!!!');
+});
 
 });
 
