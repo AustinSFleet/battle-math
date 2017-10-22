@@ -50,6 +50,16 @@ monsters: [{
   HP: 4,
   maxHP: 30,
   monCoins:50
+},
+{
+  name: "ship",
+  experience: 30,
+  attack: ()=> {
+    return(1 + Math.floor(1 * Math.random()))},
+  img:"/images/pirateship.png",
+  HP: 4,
+  maxHP: 30,
+  monCoins:50
 }
 ]
 }

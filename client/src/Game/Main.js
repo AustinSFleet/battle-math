@@ -9,6 +9,7 @@ import StatusBar from "./StatusBar";
 class Main extends Component {
   state = {
     seeBattle_Wrapper:{display: "none"},
+    Fare:0,
     seeMonsterBtns: {display: "inline"},
     activeMonster: {
       name: "Blank",
@@ -16,11 +17,19 @@ class Main extends Component {
       attack: ()=> 0,
       img:"",
       HP: 70,
-      maxHP: 10  
+      maxHP: 10
     }
   }
 
 
+
+
+  componentDidMount() {
+    const randomFare = Math.round(Math.floor(Math.random() * 100)/10)*10;
+    this.setState({Fare: randomFare });
+    console.log(this.state.Fare);
+
+  }
 
   handleMonsterClick = (event) => {
     let monsterPick = Monsters.monsters[event.target.value]
