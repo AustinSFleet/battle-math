@@ -18,19 +18,17 @@ class Main extends Component {
       img:"",
       HP: 70,
       maxHP: 10
-    
     }
-    
   }
 
- 
-  
- 
+
+
+
   componentDidMount() {
     const randomFare = (Math.round(Math.floor(Math.random() * 100)/10)*10)+200;
     this.setState({Fare: randomFare });
     console.log(this.state.Fare);
-    
+
   }
 
   handleMonsterClick = (event) => {
@@ -70,7 +68,7 @@ class Main extends Component {
     this.setState({
       seeBattle_Wrapper: {display: "none"},
       seeMonsterBtns: {display: "inline"},
-      
+
     })
 
     this.props.updateMe(upMe);

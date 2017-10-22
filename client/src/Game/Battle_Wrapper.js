@@ -15,6 +15,7 @@ class Battle_Wrapper extends Component {
     seeResultBox: {display: "none"},
     myAnimation: "",
     enemyAnimation: "",
+    showAnimations: {display: "none"},
     seeCounterAttack: {display: "none"},
     actionHeading: "",
     actionSubHead: "",
@@ -37,6 +38,8 @@ class Battle_Wrapper extends Component {
     const newProblem = Attacks.abilities[event.target.id].problem();
     this.setState({
       problem: newProblem,
+      myAnimation: Attacks.abilities[event.target.id].myAnimation,
+      enemyAnimation: Attacks.abilities[event.target.id].enemyAnimation,
       seeAttackBtns: {display : "none" },
       seeProblemBox: {display : "block"}
     });
@@ -67,8 +70,7 @@ class Battle_Wrapper extends Component {
         userAnswer: "",
         actionHeading: this.state.problem.CoMeHead,
         actionSubHead: this.state.problem.CoMeSub,
-        myAnimation: this.state.problem.myAnimation,
-        enemyAnimation: this.state.problem.enemyAnimation,
+        showAnimations: {display: "block"},
         monster: upMonster
       });
     }
@@ -93,6 +95,10 @@ class Battle_Wrapper extends Component {
     })
     if (this.state.monster.HP <= 0){
       this.deadMonster(this.state.monster);
+      this.setState({
+        showAnimations: {display: "none"},
+        seeResultBox: {display: "none"},
+      })
     }
     else{
       //counter attack
@@ -101,6 +107,7 @@ class Battle_Wrapper extends Component {
       upMe.HP -= damageTaken;
       this.props.updateMe(upMe);
       this.setState({
+        showAnimations: {display: "none"},
         seeResultBox: {display: "none"},
         seeCounterAttack: {display: "block"},
         actionHeading: `${this.state.monster.name} fights back!`,
@@ -162,6 +169,9 @@ class Battle_Wrapper extends Component {
             me={this.props.me}
             enemyAnimation={this.state.enemyAnimation}
             myAnimation={this.state.myAnimation}
+            showAnimations = {this.state.showAnimations}
+            damageNumber={this.state.problem.CoMonHP}
+            healNumber={this.state.problem.CoMeHP}
           />
           <Answer_Box
             onChange={this.handleInputChange}
