@@ -26,7 +26,7 @@ class Main extends Component {
 
 
   componentDidMount() {
-    const randomFare = (Math.round(Math.floor(Math.random() * 100)/10)*10);
+    const randomFare = (Math.round(Math.floor(Math.random() * 100)/10)*10)+300;
     this.setState({Fare: randomFare });
     console.log(this.state.Fare);
 
@@ -45,7 +45,8 @@ class Main extends Component {
     let upMe = {...this.props.me};
     if (this.props.me.coins === this.state.Fare){
       swal("YOU GOT THE DOUGH!", "WELL THEN, LET'S GO!", "success").then(
-      swal("CONGRATULATIONS!", "You used your exceptional Battle-Math skills to escape the monsters!", "success"))
+      swal("CONGRATULATIONS!", "You used your exceptional Battle-Math skills to escape the monsters! Click OK to start your adventure over!", "success"))
+      this.afterDeath();
     } else if (this.props.me.coins < this.state.Fare){
       swal(`Ahoy matey!
       `, `I know you really need to get off this island full of monsters, but I have like 4 families on 3 continents to feed. 
