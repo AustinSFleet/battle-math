@@ -154,7 +154,11 @@ body {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgb(0, 0, 0);
 }
-
+#results{
+  width: 600px;
+  height: 300px;
+  margin:auto;
+}
 #vs{
   color: white;
   text-shadow: 2px 2px black;
@@ -333,4 +337,3 @@ margin-left: 10px;
     left: 15%
   }
 }
-
