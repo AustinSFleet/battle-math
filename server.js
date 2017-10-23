@@ -48,7 +48,7 @@ db.user_Info.findAll({
 if (data.length !== 0){
   hash = data[0].dataValues.password;
   if(data[0].dataValues.userName === username && bCrypt.compareSync(password, hash)  ){
-   return  cb(null, {userName : username, password: password, "HP":data[0].dataValues.HP, "experience":data[0].dataValues.experiance, "level":data[0].dataValues.level, "image":data[0].dataValues.image, "coins": data[0].dataValues.coins});
+   return  cb(null, {userName : username, password: password, "HP":data[0].dataValues.HP, "experience":data[0].dataValues.experience, "level":data[0].dataValues.level, "image":data[0].dataValues.image, "coins": data[0].dataValues.coins});
     // console.log("it works just fine!!");
 
   }
@@ -107,9 +107,7 @@ passport.deserializeUser(function(user, cb) {
 require("./routes/api_routes.js")(app);
 require("./routes/html_routes.js")(app);
 //getting Api & HTML routes
-app.post("/api/login", function(req,res){
-  console.log(req.body);
-});
+
 app.get('/logout',destroySession);
 
 app.post("/api/login", passport.authenticate("local"),  (req, res) => {
@@ -152,7 +150,7 @@ db.user_Info.findAll({
 
 app.put("/api/save",(req,res) => {
   console.log(req.body);
-db.user_Info.update({experience : req.body.experience, level : req.body.level, coins : req.body.coin ,HP : req.body.HP},{ where : {userName :req.body.name}}).then(
+db.user_Info.update({experience : req.body.experience, level : req.body.level, coins : req.body.coins ,HP : req.body.HP},{ where : {userName :req.body.name}}).then(
   function(){
     res.json(true);
     console.log('it worked!!!');
