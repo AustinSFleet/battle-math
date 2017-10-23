@@ -145,12 +145,18 @@ class Battle_Wrapper extends Component {
   iDied = () => {
     swal("Don't you understand you dead?","You'll have to start over kiddo!","error");
     this.props.afterDeath();  
+    this.setState({
+      seeCounterAttack: {display: "none"},
+      seeResultBox: {display: "none"},
+      seeBattle_cover: {display: "block"},
+      seeBattle_view: {display: "none"}
+    });
     
   };
 
   render () {
     return (
-     <div>
+     <div id="fixIt">
 
       <div
         style={this.props.visible}

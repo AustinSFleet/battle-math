@@ -27,6 +27,7 @@ class Main extends Component {
 
   componentDidMount() {
     const randomFare = (Math.round(Math.floor(Math.random() * 100)/10)*10)+300;
+    // const randomFare = 0;
     this.setState({Fare: randomFare });
     console.log(this.state.Fare);
 
@@ -44,13 +45,24 @@ class Main extends Component {
   handlePirateClick = (event) => {
     let upMe = {...this.props.me};
     if (this.props.me.coins === this.state.Fare){
-      swal("YOU GOT THE DOUGH!", "WELL THEN, LET'S GO!", "success").then(
-      swal("CONGRATULATIONS!", "You used your exceptional Battle-Math skills to escape the monsters! Click OK to start your adventure over!", "success"))
-      this.afterDeath();
+      
+      swal("CONGRATULATIONS!", "You used your exceptional Battle-Math skills to escape the monsters! Click OK to start your adventure over!", "success")
+      
+      upMe.level = 1;
+      upMe.HP= 12;
+      upMe.maxHP= 12;
+      upMe.coins=0;
+      upMe.experience=0;
+      this.props.updateMe(upMe);
+      this.setState({
+        seeBattle_Wrapper: {display: "none"},
+        seeMonsterBtns: {display: "inline"},
+      });
+      
     } else if (this.props.me.coins < this.state.Fare){
       swal(`Ahoy matey!
       `, `I know you really need to get off this island full of monsters, but I have like 4 families on 3 continents to feed. 
-      The cost for this ride is ${this.state.Fare} coins, come back when you have the exact amount. 
+      The cost for this ride is EXACTLY ${this.state.Fare} coins, come back when you have no more, or no less. 
       
       My Pantaloons have a hole from the last battle and I don't carry change.`, "warning");
     } else if (this.props.me.coins > this.state.Fare){
