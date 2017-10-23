@@ -32,7 +32,7 @@ class Create extends Component {
       },
       {
         name:"gumball",
-        data:"/images/gumballfight.png",
+        data:"/images/gumballFight.png",
         alt:"gumball",
         src:"images/smalls/small_gumball.png"
       },
