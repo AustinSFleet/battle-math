@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import Main from './Game/Main';
 import Login from './Login&CreateNew/Login';
 import Create from './Login&CreateNew/Create';
@@ -11,6 +11,7 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
+      
     },
     newCharSuccess: false,
     userName: "",

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Create.css"
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 class Create extends Component {
 
@@ -72,7 +72,7 @@ class Create extends Component {
             <form>
               <div className="titleBox">
                 <h1>New Character</h1>
-                <Link to="/new_character" id="createLink">Already have a Character?</Link>
+                <Link to="/" id="createLink"> Already have a Character? </Link>
               </div>
               <p>Choose a Character Name</p>
               <input
