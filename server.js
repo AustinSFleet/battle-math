@@ -92,7 +92,7 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "client/build/index.html"));
   });
 
-  
+
 passport.deserializeUser(function(user, cb) {
    cb(null, user);
     });
@@ -152,7 +152,7 @@ db.user_Info.findAll({
 
 app.put("/api/save",(req,res) => {
   console.log(req.body);
-db.user_Info.update({experience : req.body.experience, level : req.body.level, coins : req.body.coin ,HP : req.body.HP},{ where : {userName :req.body.name}}).then(
+db.user_Info.update({experience : req.body.experience, level : req.body.level, coins : req.body.coins ,HP : req.body.HP},{ where : {userName :req.body.name}}).then(
   function(){
     res.json(true);
     console.log('it worked!!!');

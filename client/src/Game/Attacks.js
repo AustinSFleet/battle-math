@@ -61,7 +61,7 @@ export default {
       name: "Advanced + Attack",
       level: 3,
       myAnimation: "",
-      enemyAnimation: "/images/fireworksanimated.gif",
+      enemyAnimation: "/images/explode_across.gif",
       problem: () => {
        const A = Math.floor(Math.random()*(10));
        const B = Math.floor(Math.random()*(10));

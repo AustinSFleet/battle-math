@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Redirect } from 'react-router';
 import Main from './Game/Main';
 import Login from './Login&CreateNew/Login';
 import Create from './Login&CreateNew/Create';
@@ -16,7 +17,7 @@ class App extends Component {
       abilities: [],
       items: [],
       maxHP: 20,
-      img:"/images/charmander.png",
+      img:"/images/naruto.png",
       HP: 12,
       maxHP: 12,
       coins:0
@@ -141,11 +142,10 @@ class App extends Component {
             }
           />
 
+
           <Route exact path="/new_character"
             render={() => this.state.newCharSuccess
-              ? <Main
-                  me={this.state.me}
-                  updateMe={this.updateMe} />
+              ? <Redirect to="/"/>
               : <Create
                   page1={this.state.page1}
                   page2={this.state.page2}
@@ -160,6 +160,7 @@ class App extends Component {
             />
 
           />
+
           <Route exact path="/"
             render={() => Object.keys(this.state.me).length
               ? <Main
