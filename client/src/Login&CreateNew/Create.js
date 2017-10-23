@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Create.css"
+import { link } from 'react-router'
 
 class Create extends Component {
 
@@ -24,10 +25,22 @@ class Create extends Component {
         src:"images/smalls/small_leonardo.png"
       },
       {
+        name:"charmander",
+        data:"/images/charmander.png",
+        alt:"charmander",
+        src:"images/smalls/small_charmander.png"
+      },
+      {
         name:"gumball",
         data:"/images/gumballfight.png",
         alt:"gumball",
         src:"images/smalls/small_gumball.png"
+      },
+      {
+        name:"naruto",
+        data:"/images/naruto.png",
+        alt:"naruto",
+        src:"images/smalls/small_naruto.png"
       },
       {
         name:"batman",
@@ -46,13 +59,7 @@ class Create extends Component {
         data:"/images/son_goku.png",
         alt:"son goku",
         src:"images/smalls/small_goku.png"
-      },
-      {
-        name:"charmander",
-        data:"/images/charmander.png",
-        alt:"charmander",
-        src:"images/smalls/small_charmander.png"
-      },
+      }
     ]
   }
 
