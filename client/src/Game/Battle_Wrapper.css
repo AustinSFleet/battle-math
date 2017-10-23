@@ -21,7 +21,7 @@ body {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: absolute;
-    margin-left: -35%;
+    margin-left: -27%;
     margin-top:17.5%;
     /* put the height and width of your image here */
     height: 150px;
@@ -37,12 +37,12 @@ body {
     background-position: 50% 50%;
     position: absolute;
     margin-top:12%;
-    margin-right: 50%;
+    margin-right: -50%;
     /* put the height and width of your image here */
     height: 200px;
     width: 200px;
     border: none;
-    position: fixed;
+    
 
 }
 
@@ -55,8 +55,8 @@ body {
     height: 200px;
     width: 200px;
     border: none;
-   margin-left: -5%;
-   margin-top: 0%;
+   margin-left: 3%;
+   margin-top: -2%;
    position:fixed;
 
 
@@ -71,7 +71,7 @@ body {
     height: 200px;
     width: 200px;
     border: none;
-   margin-left: 15%;
+   margin-left: 25%;
    margin-top: 25%;
    position:fixed;
 }
@@ -86,10 +86,26 @@ body {
     width: 200px;
     border: none;
 
-   margin-left: -20%;
-   margin-top: 25%;
+   margin-left: 18%;
+   margin-top: 10%;
    position:fixed;
 }
+
+#boba {
+  background: transparent url("./../Assets/photos/bobaIcon.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: absolute;
+  /* put the height and width of your image here */
+  height: 200px;
+  width: 200px;
+  border: none;
+  margin-top: 28%;
+  margin-left: -18%;
+ 
+ position:fixed;
+}
+
 
 #ship {
     background: transparent url("./../Assets/photos/pirates.png");
@@ -100,7 +116,7 @@ body {
     height: 200px;
     width: 200px;
     border: none;
-   margin-left: 28%;
+   margin-left: 37%;
    margin-top: 13%;
    position:fixed;
 }
@@ -120,13 +136,14 @@ body {
     font-weight: bold;
     text-shadow: 2px 2px #ffffff;
     margin-top: 15%;
-    margin-left: -10%;
+    margin-left: -0%;
 
 
 }
 
 #battle-box{
     margin-top: 90px;
+    margin-left: 20%;
 }
 
 .battler{
@@ -137,6 +154,56 @@ body {
   text-shadow: 2px 2px black;
   font-size: 40px;
 }
+
+#save {
+  margin-top: -3%;
+  margin-right: 0%;
+  float: right;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  /* outline: 5px white; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 35px;
+  color: rgb(2, 2, 2);
+  /* text-shadow: 2px 2px black; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  z-index: 3;
+  position: relative;
+}
+
+#save:hover{
+  color: rgb(19, 150, 19)
+}
+
+#logout {
+  float:right;
+  margin-top: -3%;
+  margin-right: 5%;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  /* outline: 5px white; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 35px;
+  color: rgb(2, 2, 2);
+  /* text-shadow: 2px 2px black; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  z-index: 3;
+  position: relative;
+}
+
+#logout:hover{
+  color: rgb(179, 2, 2)
+}
+
+
 
 .result-box{
     position: relative;
@@ -164,6 +231,7 @@ body {
   bottom: 220px;
   right: 20px;
   font-size: 20px;
+  margin-left: 5%;
 }
 
 .inline{

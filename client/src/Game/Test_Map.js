@@ -38,6 +38,11 @@ class Test_Map extends Component {
           onClick={this.props.pirateClick}
           value="5"
         />
+        <button id="boba"
+          style={this.props.seeMonsterBtns}
+          onClick={this.props.monsterClick}
+          value="6"
+        ></button>
         
       
       </div>

@@ -21,6 +21,7 @@ this.props.updateMe({});
 
 render () { 
    return ( 
+   <div>
    <div className= "page-header" align="left">
         
        <span className="labelText"> Name: </span> 
@@ -30,8 +31,10 @@ render () {
        <span className="labelText"> Coins: </span>
        {this.props.coins}
     
-     <button className="btn btn-md btn-primary" onClick={this.clickSave}>Save</button>
-     <button  className="btn btn-md btn-danger" onClick={this.clickLogout}>Logout</button>
+     
+    </div>   
+    <button id="logout" className="btn btn-md btn-danger" onClick={this.clickLogout}>Logout</button>
+    <button id="save" className="btn btn-md btn-primary" onClick={this.clickSave}>Save</button>
     </div>
    )}
 
