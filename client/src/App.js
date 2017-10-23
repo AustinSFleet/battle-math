@@ -11,16 +11,6 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-      name: "Redman",
-      level: 5,
-      experience: 200,
-      abilities: [],
-      items: [],
-      maxHP: 20,
-      img:"/images/naruto.png",
-      HP: 12,
-      maxHP: 12,
-      coins:0
     },
     newCharSuccess: false,
     userName: "",
