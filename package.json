@@ -18,7 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only-dev && yarn --production=false && yarn run build"
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
   "keywords": [],
   "author": "",
