@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Create.css"
+import { Link } from 'react-router-dom'
 
 class Create extends Component {
 
@@ -9,37 +10,55 @@ class Create extends Component {
         name:"finn",
         data:"/images/Finn.png",
         alt:"Adventure Time Finn",
-        src:"images/small_Finn.png"
+        src:"images/smalls/small_Finn.png"
       },
       {
         name:"mario",
         data:"/images/mario.png",
         alt:"super mario",
-        src:"images/small_mario.png"
+        src:"images/smalls/small_mario.png"
       },
       {
         name:"leonardo",
         data:"/images/leonardo.png",
         alt:"ninja turtle leonardo",
-        src:"images/small_leonardo.png"
+        src:"images/smalls/small_leonardo.png"
+      },
+      {
+        name:"charmander",
+        data:"/images/charmander.png",
+        alt:"charmander",
+        src:"images/smalls/small_charmander.png"
       },
       {
         name:"gumball",
-        data:"/images/gumball.png",
+        data:"/images/gumballfight.png",
         alt:"gumball",
-        src:"images/small_gumball.png"
+        src:"images/smalls/small_gumball.png"
+      },
+      {
+        name:"naruto",
+        data:"/images/naruto.png",
+        alt:"naruto",
+        src:"images/smalls/small_naruto.png"
       },
       {
         name:"batman",
         data:"/images/batman.png",
         alt:"lego batman",
-        src:"images/small_batman.png"
+        src:"images/smalls/small_batman.png"
       },
       {
         name:"spongebob",
         data:"/images/spongebob.png",
-        alt:"lego batman",
-        src:"images/small_spongebob.png"
+        alt:"spongebob",
+        src:"images/smalls/small_spongebob.png"
+      },
+      {
+        name:"son-goku",
+        data:"/images/son_goku.png",
+        alt:"son goku",
+        src:"images/smalls/small_goku.png"
       }
     ]
   }
@@ -53,6 +72,7 @@ class Create extends Component {
             <form>
               <div className="titleBox">
                 <h1>New Character</h1>
+                <Link to="/new_character" id="createLink">Already have a Character?</Link>
               </div>
               <p>Choose a Character Name</p>
               <input

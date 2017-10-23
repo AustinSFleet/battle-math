@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Redirect } from 'react-router';
 import Main from './Game/Main';
 import Login from './Login&CreateNew/Login';
 import Create from './Login&CreateNew/Create';
@@ -10,15 +11,6 @@ import './App.css';
 class App extends Component {
   state = {
     me: {
-      name: "Redman",
-      level: 1,
-      experience: 0,
-      abilities: [],
-      items: [],
-      maxHP: 20,
-      img:"/images/Finn.png",
-      HP: 12,
-      maxHP: 12
     },
     newCharSuccess: false,
     userName: "",
@@ -28,6 +20,7 @@ class App extends Component {
     confirmPassword: "",
     page1: {display:"block"},
     page2: {display:"none"}
+
   };
 
   updateMe = (upMe) => {
@@ -35,6 +28,7 @@ class App extends Component {
       me: upMe
     })
   }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -51,21 +45,32 @@ class App extends Component {
     }
 
     API.login(loginData).then((response) => {
-      const character = {
-        name: response.data.name,
-        img: response.data.img,
-        level: response.data.level,
-        experience: response.data.experience,
-        coins: response.data.coins,
-        HP: response.data.HP
+      console.log("data:")
+      console.log(response.data)
+      if (response.data.error) {
+        console.log(response);
+        alert("Login/Password don't match!")
       }
-      this.setState({
-        me: character
-      }).catch(function (error) {
+      else{
+        console.log("making character....")
+        const character = {
+          name: response.data.userName,
+          img: response.data.image,
+          level: response.data.level,
+          experience: response.data.experience,
+          coins: response.data.coins,
+          HP: response.data.HP
+        }
+        this.setState({
+          me: character
+        });
+      }
+    }).catch(function (error) {
         console.log(error);
      });
-    })
   }
+
+
 
   pageChange = (event) => {
     event.preventDefault();
@@ -108,12 +113,16 @@ class App extends Component {
     });
   }
 
+
   render() {
     return (
       <Router>
       <div>
         <Switch>
           <Route exact path="/login"
+
+            component={Login}
+
             render={() => (<Login
               handleInputChange={this.handleInputChange}
               loginSubmit={this.loginSubmit}
@@ -123,11 +132,10 @@ class App extends Component {
             }
           />
 
+
           <Route exact path="/new_character"
             render={() => this.state.newCharSuccess
-              ? <Main
-                  me={this.state.me}
-                  updateMe={this.updateMe} />
+              ? <Redirect to="/"/>
               : <Create
                   page1={this.state.page1}
                   page2={this.state.page2}
@@ -142,6 +150,7 @@ class App extends Component {
             />
 
           />
+
           <Route exact path="/"
             render={() => Object.keys(this.state.me).length
               ? <Main

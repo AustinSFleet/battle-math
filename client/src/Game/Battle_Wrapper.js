@@ -3,6 +3,7 @@ import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
 import Attacks from "./Attacks.js"
 import "./Battle_Wrapper.css";
+import swal from 'sweetalert';
 
 class Battle_Wrapper extends Component {
   state = {
@@ -13,10 +14,14 @@ class Battle_Wrapper extends Component {
     seeAttackBtns: {display : "block" },
     seeProblemBox: {display : "none"},
     seeResultBox: {display: "none"},
+    myAnimation: "",
+    enemyAnimation: "",
+    showAnimations: {display: "none"},
     seeCounterAttack: {display: "none"},
     actionHeading: "",
     actionSubHead: "",
-    monster: this.props.monster
+    monster: this.props.monster,
+    monCoins: this.props.monster.monCoins
   };
 
   handleBattleReady = (event) => {
@@ -34,6 +39,8 @@ class Battle_Wrapper extends Component {
     const newProblem = Attacks.abilities[event.target.id].problem();
     this.setState({
       problem: newProblem,
+      myAnimation: Attacks.abilities[event.target.id].myAnimation,
+      enemyAnimation: Attacks.abilities[event.target.id].enemyAnimation,
       seeAttackBtns: {display : "none" },
       seeProblemBox: {display : "block"}
     });
@@ -64,8 +71,8 @@ class Battle_Wrapper extends Component {
         userAnswer: "",
         actionHeading: this.state.problem.CoMeHead,
         actionSubHead: this.state.problem.CoMeSub,
-        monster: upMonster,
-       
+        showAnimations: {display: "block"},
+        monster: upMonster
       });
     }
     else {
@@ -77,15 +84,22 @@ class Battle_Wrapper extends Component {
         actionHeading: this.state.problem.WrMeHead,
         actionSubHead: this.state.problem.WrMeSub,
         monster: upMonster,
-        
+
       });
     }
   };
 
   handleResult = event => {
     //this happens after your attack
+    this.setState({
+
+    })
     if (this.state.monster.HP <= 0){
       this.deadMonster(this.state.monster);
+      this.setState({
+        showAnimations: {display: "none"},
+        seeResultBox: {display: "none"},
+      })
     }
     else{
       //counter attack
@@ -94,11 +108,12 @@ class Battle_Wrapper extends Component {
       upMe.HP -= damageTaken;
       this.props.updateMe(upMe);
       this.setState({
+        showAnimations: {display: "none"},
         seeResultBox: {display: "none"},
         seeCounterAttack: {display: "block"},
         actionHeading: `${this.state.monster.name} fights back!`,
         actionSubHead: `You lost ${damageTaken} life!`,
-        
+
       });
     }
   };
@@ -116,7 +131,7 @@ class Battle_Wrapper extends Component {
   };
 
   deadMonster = (monster) => {
-    alert(`You have defeated ${monster.name}!`);
+    swal(`Victory!`,`You have defeated ${monster.name}!`, "success");
     this.setState({
       seeCounterAttack: {display: "none"},
       seeResultBox: {display: "none"},
@@ -128,13 +143,21 @@ class Battle_Wrapper extends Component {
 
 
   iDied = () => {
-    alert("Don't you understand you dead?");
+    swal("Don't you understand you dead?","You'll have to start over kiddo!","error");
+    this.props.afterDeath();  
+    this.setState({
+      seeCounterAttack: {display: "none"},
+      seeResultBox: {display: "none"},
+      seeBattle_cover: {display: "block"},
+      seeBattle_view: {display: "none"}
+    });
+    
   };
 
   render () {
     return (
-     <div>
-      
+     <div id="fixIt">
+
       <div
         style={this.props.visible}
       >
@@ -153,6 +176,11 @@ class Battle_Wrapper extends Component {
             state={this.state}
             display={this.state.seeResultBox}
             me={this.props.me}
+            enemyAnimation={this.state.enemyAnimation}
+            myAnimation={this.state.myAnimation}
+            showAnimations = {this.state.showAnimations}
+            damageNumber={this.state.problem.CoMonHP}
+            healNumber={this.state.problem.CoMeHP}
           />
           <Answer_Box
             onChange={this.handleInputChange}

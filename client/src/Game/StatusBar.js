@@ -2,20 +2,47 @@ import React, { Component } from "react";
 import Answer_Box from "./Answer_Box";
 import Battle_Box from "./Battle_Box";
 import Main from "./Main.js";
+import API from "../utils/API"
 import "./Battle_Wrapper.css";
 
+const styles= {
+
+}
 class StatusBar extends Component {
 
-render () {
+clickSave = ()=>{
+    API.save(this.props.me);
+}
+
+clickLogout =() =>  {
+this.props.updateMe({});
+}
+
+
+<<<<<<< HEAD
+render () { 
    return ( 
-   <div class= "page-header" align="left">
-        
-       <span class="labelText"> Name: </span> 
+   <div>
+=======
+render () {
+   return (
+>>>>>>> test
+   <div className= "page-header" align="left">
+
+       <span className="labelText"> Name: </span>
        {this.props.name} {" "}
-       <span class="labelText"> Level: </span>
+       <span className="labelText"> Level: </span>
        {this.props.level}
-       <span class="labelText"> Coins: </span>
-        
+       <span className="labelText"> Coins: </span>
+       {this.props.coins}
+    
+<<<<<<< HEAD
+     
+    </div>   
+    <button id="logout" className="btn btn-md btn-danger" onClick={this.clickLogout}>Logout</button>
+    <button id="save" className="btn btn-md btn-primary" onClick={this.clickSave}>Save</button>
+=======
+>>>>>>> test
     </div>
    )}
 

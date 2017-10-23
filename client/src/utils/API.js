@@ -8,15 +8,8 @@ export default {
   newUser: function(newUserData) {
     return axios.post("/api/newUser", newUserData)
   },
-
-  update: function(updateData) {
-    return axios.post("/api/newUser", updateData)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  },
-
+  save: function(gameData){
+    return axios.put("/api/save",gameData)
+  } 
 };
+
