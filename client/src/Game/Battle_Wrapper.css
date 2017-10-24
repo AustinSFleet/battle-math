@@ -63,8 +63,8 @@ body {
 }
 
 #battle-box{
-  width: auto;
-  height: auto;
+  width: 800px;
+  margin:auto;
 }
 
 #Marshall {
