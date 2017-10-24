@@ -64,7 +64,10 @@ body {
 
 #battle-box{
   width: 800px;
-  margin:auto;
+  margin: auto;
+  margin-top:4%;
+  
+
 }
 
 #Marshall {
@@ -146,12 +149,7 @@ body {
 
 }
 
-#battle-box{
-    margin-top: 90px;
-    margin-left: 20%;
-    width: 500px;
 
-}
 
 .battler{
   margin-top: 0;
@@ -326,11 +324,6 @@ margin-left: 10px;
 
 }
 
-#battle-box {
-    width: 500px;
-    height: 400px;
-    margin-top: 4%;
-}
 
 .attackBtn {
     background-color: Transparent;
