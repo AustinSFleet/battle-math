@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Battle_Wrapper.css";
 
 class Battle_Box extends Component {
 
