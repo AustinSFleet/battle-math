@@ -58,7 +58,7 @@ class Create extends Component {
         name:"son-goku",
         data:"/images/son_goku.png",
         alt:"son goku",
-        src:"images/smalls/small_goku.png"
+        src:"images/smalls/small_son_goku.png"
       }
     ]
   }
