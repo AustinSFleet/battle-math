@@ -1,4 +1,4 @@
-# battle-math
+# Battle-math
 Education exploration game difficulty geared for around 1st and 2nd grade.
 
 This app was created with the goal of making math a little bit more fun!
@@ -8,3 +8,4 @@ Includes features like levelling up, coin gathering, increasing complexity of ma
 This is a react app so make sure to not only run npm install but yarn install as well, if you're running it locally you may run just out of the client folder but to add database functionality you'll need to run from the root file.
 
 deployed version coming very very soon!
+[Try Playing The Game](https://battlemath.herokuapp.com/)
