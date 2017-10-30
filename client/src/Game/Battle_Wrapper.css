@@ -62,6 +62,7 @@ body {
 
 }
 
+
 #Marshall {
     background: transparent url("./../Assets/photos/Marshall_Lee.png");
     background-repeat: no-repeat;
@@ -218,7 +219,11 @@ body {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgb(0, 0, 0);
 }
-
+#results{
+  width: 600px;
+  height: 300px;
+  margin:auto;
+}
 #vs{
   color: white;
   text-shadow: 2px 2px black;
@@ -312,12 +317,6 @@ margin-left: 10px;
 
 }
 
-#battle-box {
-    width: 800px;
-    height: 400px;
-    margin: auto;
-    margin-top: 4%;
-}
 
 .attackBtn {
     background-color: Transparent;
@@ -382,6 +381,23 @@ margin-left: 10px;
   bottom: 40px;
 }
 
+
+#battle-box{
+  width: 800px;
+  margin-left: 190px;
+  margin-top:4%;
+  
+
+}
+
+.battle-box{
+  width: 800px;
+  margin-left: 190px;
+  margin-top:4%;
+  
+
+}
+
 @media screen and (max-width: 1200px) {
   #my-animation-box{
     left: 28%
@@ -399,4 +415,3 @@ margin-left: 10px;
     left: 15%
   }
 }
-

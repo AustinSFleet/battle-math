@@ -92,7 +92,7 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "client/build/index.html"));
   });
 
-  
+
 passport.deserializeUser(function(user, cb) {
    cb(null, user);
     });
@@ -107,7 +107,6 @@ passport.deserializeUser(function(user, cb) {
 require("./routes/api_routes.js")(app);
 require("./routes/html_routes.js")(app);
 //getting Api & HTML routes
-
 app.get('/logout',destroySession);
 
 app.post("/api/login", passport.authenticate("local"),  (req, res) => {
@@ -159,7 +158,7 @@ db.user_Info.update({experience : req.body.experience, level : req.body.level, c
 });
 
 
-  db.sequelize.sync({ force: true }).then(function() {
+  db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });

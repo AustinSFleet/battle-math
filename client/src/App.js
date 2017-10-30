@@ -133,6 +133,7 @@ class App extends Component {
             }
           />
 
+
           <Route exact path="/new_character"
             render={() => this.state.newCharSuccess
               ? <Redirect to="/"/>
@@ -150,6 +151,7 @@ class App extends Component {
             />
 
           />
+
           <Route exact path="/"
             render={() => Object.keys(this.state.me).length
               ? <Main

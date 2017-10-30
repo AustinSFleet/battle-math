@@ -23,8 +23,8 @@ render () {
    return ( 
    <div>
    <div className= "page-header" align="left">
-        
-       <span className="labelText"> Name: </span> 
+
+       <span className="labelText"> Name: </span>
        {this.props.name} {" "}
        <span className="labelText"> Level: </span>
        {this.props.level}
