@@ -7,6 +7,7 @@ import Create from './Login&CreateNew/Create';
 import NoMatch from './NoMatch';
 import API from "./utils/API"
 import './App.css';
+import swal from 'sweetalert';
 
 class App extends Component {
   state = {
@@ -46,11 +47,10 @@ class App extends Component {
     }
 
     API.login(loginData).then((response) => {
-      console.log("data:")
-      console.log(response.data)
+      
       if (response.data.error) {
-        console.log(response);
-        alert("Login/Password don't match!")
+        
+        swal("ERROR","Login/Password don't match!", "error")
       }
       else{
         console.log("making character....")
@@ -80,7 +80,7 @@ class App extends Component {
       setPassword: "",
       confirmPassword: ""
       })
-      alert("Passwords Must Match!");
+      swal("Whoops!","Passwords Must Match!", "error");
     }
     else {
       this.setState({
